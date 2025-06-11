@@ -7,30 +7,15 @@
     <!-- Caricamento di Tailwind CSS per uno styling rapido e responsivo -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d0d0d; /* Sfondo scuro */
-            color: #e0e0e0; /* Testo chiaro */
-        }
-        /* Stili personalizzati per il gradiente del bottone */
-        .btn-gradient {
-            background-image: linear-gradient(to right, #6a0dad, #8a2be2, #a020f0);
-            transition: all 0.3s ease;
-        }
-        .btn-gradient:hover {
-            background-position: right center;
-            background-size: 200% auto;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(160, 32, 240, 0.4);
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- Aggiunto link a style.css -->
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen"> <!-- Stili body da style.css -->
     <!-- Header Section (Identical to other pages) -->
-    <header class="bg-gray-900 text-white p-4 shadow-lg">
+    <header class="text-white p-4 w-full z-50"> <!-- Classi header da style.css e Tailwind essenziali -->
         <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold text-purple-400">IAm</a>
+            <a href="index.html" class="logo-link">
+                <span class="logo-text">IAm</span>
+            </a>
             <nav>
                 <ul class="flex space-x-4">
                     <li><a href="index.html" class="hover:text-purple-300 transition-colors duration-300">Home</a></li>
