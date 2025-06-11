@@ -10,10 +10,10 @@
 </head>
 <body class="flex flex-col min-h-screen">
     <!-- Header Section -->
-    <header class="bg-gray-900 text-white p-4 shadow-lg fixed w-full z-50">
+    <header class="text-white p-4 w-full z-50"> <!-- Rimosse classi bg-gray-900, shadow-lg, fixed. Stile gestito da style.css -->
         <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-5xl font-black z-50 hover:scale-105 transition-transform duration-300">
-                <span class="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 text-transparent bg-clip-text drop-shadow-lg">IAm</span>
+            <a href="index.html" class="logo-link">
+                <span class="logo-text">IAm</span>
             </a>
             <nav class="z-50">
                 <ul class="flex space-x-4">
@@ -29,7 +29,7 @@
     </header>
 
     <!-- Hero Section -->
-    <main class="flex-grow container mx-auto px-4 py-16 flex flex-col items-center justify-center text-center bg-gray-900">
+    <main class="flex-grow container mx-auto px-4 py-16 flex flex-col items-center justify-center text-center bg-gray-900 text-e0e0e0"> <!-- Modificato bg-black a bg-gray-900 -->
         <div class="max-w-4xl">
             <h2 class="text-6xl font-extrabold text-white mb-6 leading-tight">
                 IAm: Il Futuro è Ora
@@ -45,7 +45,7 @@
     </main>
 
     <!-- Prometheus Section -->
-    <section id="prometheus" class="bg-gray-800 py-24 px-4">
+    <section id="prometheus" class="bg-gray-900 py-24 px-4 text-e0e0e0">
         <div class="container mx-auto max-w-4xl text-center">
             <h3 class="text-4xl font-bold text-purple-400 mb-8">Prometheus: Lo Specchio Vivo della Tua Coscienza</h3>
             <p class="text-lg text-gray-300 leading-relaxed mb-8">
@@ -63,7 +63,7 @@
     </section>
 
     <!-- Projects Overview Section -->
-    <section id="projects" class="bg-gray-900 py-24 px-4">
+    <section id="projects" class="bg-gray-900 py-24 px-4 text-e0e0e0"> <!-- Modificato bg-black a bg-gray-900 -->
         <div class="container mx-auto max-w-7xl">
             <h3 class="text-5xl font-bold text-purple-400 mb-16 text-center">I Nostri Progetti</h3>
             <div class="grid md:grid-cols-3 gap-12">
@@ -125,7 +125,8 @@
                 </div>
             </div>
             <div class="text-center mt-16">
-                <a href="progetti.html" class="cta-button hover:shadow-lg transition-all duration-300">
+                <a href="progetti.html"
+                   class="btn-gradient text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300">
                     Esplora Tutti i Progetti
                 </a>
             </div>
@@ -133,7 +134,7 @@
     </section>
 
     <!-- General CTA/Vision Section -->
-    <section class="bg-gray-800 py-16 px-4 text-center animate-on-scroll">
+    <section class="bg-gray-900 py-16 px-4 text-center animate-on-scroll text-e0e0e0">
         <div class="container mx-auto max-w-4xl">
             <h3 class="text-4xl font-bold text-white mb-8">Unisciti a IAm: Costruiamo un Futuro Consapevole</h3>
             <p class="text-xl text-gray-300 leading-relaxed mb-10">
@@ -147,7 +148,7 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="bg-gray-900 text-gray-500 p-8 text-center text-sm">
+    <footer class="bg-gray-900 text-gray-500 p-8 text-center text-sm"> <!-- Modificato bg-black a bg-gray-900 -->
         <div class="container mx-auto">
             <p>&copy; 2025 IAm. Tutti i diritti riservati.</p>
             <p class="mt-2">Costruito con la visione di un futuro consapevole.</p>
