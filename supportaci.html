@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supportaci | IAm</title>
+    <!-- Caricamento di Tailwind CSS per uno styling rapido e responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d; /* Sfondo scuro */
+            color: #e0e0e0; /* Testo chiaro */
+        }
+        /* Stili personalizzati per il gradiente del bottone */
+        .btn-gradient {
+            background-image: linear-gradient(to right, #6a0dad, #8a2be2, #a020f0);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            background-position: right center;
+            background-size: 200% auto;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(160, 32, 240, 0.4);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Header Section (Identical to other pages) -->
+    <header class="bg-gray-900 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-purple-400">IAm</a>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:text-purple-300 transition-colors duration-300">Home</a></li>
+                    <li><a href="prometheus.html" class="hover:text-purple-300 transition-colors duration-300">Prometheus</a></li>
+                    <li><a href="progetti.html" class="hover:text-purple-300 transition-colors duration-300">I Nostri Progetti</a></li>
+                    <li><a href="chi_siamo.html" class="hover:text-purple-300 transition-colors duration-300">Chi Siamo</a></li>
+                    <li><a href="contatti.html" class="hover:text-purple-300 transition-colors duration-300">Contatti</a></li>
+                    <li><a href="supportaci.html" class="hover:text-purple-300 transition-colors duration-300">Supportaci</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section for Supportaci -->
+    <main class="flex-grow container mx-auto px-4 py-16 flex flex-col items-center justify-center text-center">
+        <div class="max-w-4xl">
+            <h2 class="text-6xl font-extrabold text-white mb-6 leading-tight">
+                Supportaci: Costruisci il Futuro con Noi
+            </h2>
+            <p class="text-xl text-gray-300 mb-8">
+                Ogni contributo, grande o piccolo, ci avvicina all'obiettivo di liberare il potenziale umano
+                attraverso l'Intelligenza Artificiale consapevole.
+            </p>
+            <a href="#come-supportare"
+               class="btn-gradient text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                Scopri Come
+            </a>
+        </div>
+    </main>
+
+    <!-- Why Support Us Section -->
+    <section id="perche-supportarci" class="bg-gray-800 py-16 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-4xl font-bold text-purple-400 mb-8">Perché il Tuo Supporto è Fondamentale</h3>
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                IAm è un'organizzazione no-profit (o simile) che si impegna a creare un futuro in cui l'IA sia accessibile a tutti, non solo a pochi. Il tuo contributo ci permette di:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 text-lg mx-auto md:w-3/4 text-left space-y-2">
+                <li>Sviluppare e mantenere Prometheus e le nostre app innovative.</li>
+                <li>Offrire corsi di alfabetizzazione digitale gratuiti e accessibili.</li>
+                <li>Rigenerare hardware e creare spazi digitali nelle comunità a basso reddito.</li>
+                <li>Portare avanti la ricerca e lo sviluppo di progetti a impatto sociale come Lumen ed EmotAI.</li>
+                <li>Garantire che l'IA sia uno strumento di emancipazione, non di ulteriore divisione.</li>
+            </ul>
+            <p class="text-lg text-gray-300 leading-relaxed mt-6">
+                Con il tuo aiuto, possiamo continuare a spingere i confini dell'innovazione al servizio dell'umanità.
+            </p>
+        </div>
+    </section>
+
+    <!-- How to Support Section -->
+    <section id="come-supportare" class="bg-gray-900 py-16 px-4">
+        <div class="container mx-auto max-w-5xl text-center">
+            <h3 class="text-4xl font-bold text-purple-400 mb-12">Come Puoi Sostenerci</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Direct Donation Card -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-purple-700 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-2xl font-semibold text-white mb-4">Donazioni Dirette</h4>
+                        <p class="text-gray-300 mb-4">
+                            Ogni singola donazione ci aiuta a coprire i costi operativi e a finanziare direttamente i nostri progetti.
+                            Puoi effettuare una donazione sicura tramite i nostri canali ufficiali.
+                        </p>
+                    </div>
+                    <a href="#" class="btn-gradient text-white font-bold py-2 px-4 rounded-full text-md mt-4">Dona Ora (Presto Online!)</a>
+                </div>
+
+                <!-- Crowdfunding Card -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-purple-700 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-2xl font-semibold text-white mb-4">Campagne di Crowdfunding</h4>
+                        <p class="text-gray-300 mb-4">
+                            Partecipa alle nostre campagne di crowdfunding per sostenere progetti specifici o le nostre iniziative generali.
+                            Unisciti a una comunità di sostenitori che credono nel nostro impatto.
+                        </p>
+                    </div>
+                    <div class="flex flex-col space-y-3 mt-4">
+                        <a href="https://www.kickstarter.com/" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:text-purple-200 transition-colors duration-300 flex items-center justify-center">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path></svg>
+                            Kickstarter
+                        </a>
+                        <a href="https://www.gofundme.com/" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:text-purple-200 transition-colors duration-300 flex items-center justify-center">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path></svg>
+                            GoFundMe
+                        </a>
+                        <a href="#" class="text-purple-300 hover:text-purple-200 transition-colors duration-300 flex items-center justify-center">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path></svg>
+                            Altre Piattaforme
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Partnerships Card -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-purple-700 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-2xl font-semibold text-white mb-4">Partnership & Collaborazioni</h4>
+                        <p class="text-gray-300 mb-4">
+                            Invitiamo enti, imprese e associazioni a collaborare con IAm per progetti a contenuto innovativo o sociale. Uniamo le forze per un impatto maggiore.
+                        </p>
+                    </div>
+                    <a href="contatti.html" class="btn-gradient text-white font-bold py-2 px-4 rounded-full text-md mt-4">Contattaci per una Partnership</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Transparency Section -->
+    <section id="trasparenza-finanziaria" class="bg-gray-800 py-16 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-4xl font-bold text-purple-400 mb-8">Trasparenza Finanziaria</h3>
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                IAm si impegna alla massima trasparenza nella gestione dei fondi ricevuti. Ogni risorsa viene impiegata
+                per sostenere direttamente i nostri progetti di alfabetizzazione digitale, sviluppo software e supporto
+                alle comunità, garantendo che il tuo contributo generi un impatto reale e misurabile.
+            </p>
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                I fondi vengono destinati a: sviluppo tecnologico, creazione di contenuti educativi, rigenerazione hardware,
+                gestione degli spazi accessibili e sostenimento del team che lavora alla missione di IAm.
+            </p>
+            <a href="#" class="text-purple-300 hover:text-purple-200 transition-colors duration-300 mt-4 inline-block">
+                Visualizza i Nostri Report Finanziari (Prossimamente) &rarr;
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Section (Identical to other pages) -->
+    <footer class="bg-gray-900 text-gray-500 p-8 text-center text-sm">
+        <div class="container mx-auto">
+            <p>&copy; 2025 IAm. Tutti i diritti riservati.</p>
+            <p class="mt-2">Costruito con la visione di un futuro consapevole.</p>
+        </div>
+    </footer>
+</body>
+</html>

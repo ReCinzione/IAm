@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Nostri Progetti | IAm</title>
+    <!-- Caricamento di Tailwind CSS per uno styling rapido e responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d; /* Dark background */
+            color: #e0e0e0; /* Light text */
+        }
+        /* Custom styles for button gradient */
+        .btn-gradient {
+            background-image: linear-gradient(to right, #6a0dad, #8a2be2, #a020f0);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            background-position: right center;
+            background-size: 200% auto;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(160, 32, 240, 0.4);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Header Section (Identical to index.html) -->
+    <header class="bg-gray-900 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-purple-400">IAm</a>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:text-purple-300 transition-colors duration-300">Home</a></li>
+                    <li><a href="prometheus.html" class="hover:text-purple-300 transition-colors duration-300">Prometheus</a></li>
+                    <li><a href="progetti.html" class="hover:text-purple-300 transition-colors duration-300">I Nostri Progetti</a></li>
+                    <li><a href="chi_siamo.html" class="hover:text-purple-300 transition-colors duration-300">Chi Siamo</a></li>
+                    <li><a href="contatti.html" class="hover:text-purple-300 transition-colors duration-300">Contatti</a></li>
+                    <li><a href="supportaci.html" class="hover:text-purple-300 transition-colors duration-300">Supportaci</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section for Projects -->
+    <main class="flex-grow container mx-auto px-4 py-16 flex flex-col items-center justify-center text-center">
+        <div class="max-w-4xl">
+            <h2 class="text-6xl font-extrabold text-white mb-6 leading-tight">
+                I Nostri Progetti: L'IA al Servizio dell'Umanità
+            </h2>
+            <p class="text-xl text-gray-300 mb-8">
+                In IAm, sviluppiamo soluzioni innovative e sostenibili, mettendo l'Intelligenza Artificiale al centro per guidare l'emancipazione umana e una gestione consapevole del mondo.
+            </p>
+            <a href="#formazione"
+               class="btn-gradient text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                Esplora le Aree
+            </a>
+        </div>
+    </main>
+
+    <!-- Formazione Digitale & Accesso AI Section -->
+    <section id="formazione" class="bg-gray-800 py-16 px-4">
+        <div class="container mx-auto max-w-5xl">
+            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">1. Formazione Digitale & Accesso AI</h3>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <img src="https://placehold.co/400x250/5D3FD3/FFFFFF?text=Corsi+Online+IA" alt="Online AI Courses" class="mx-auto md:mx-0 rounded-lg shadow-xl mb-6 border-4 border-purple-600">
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="text-3xl font-semibold text-white mb-4">Corsi Online con Agenti Virtuali</h4>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Creiamo piattaforme interattive e corsi online tenuti da agenti virtuali specializzati. Dalle basi dell'alfabetizzazione digitale all'implementazione avanzata dell'IA nella vita personale e professionale, i nostri corsi si adattano al grado di specializzazione di ogni utente.
+                        Accessibili anche da smartphone di fascia medio-bassa, per garantire che nessuno venga lasciato indietro. Offriamo corsi base gratuiti o lezioni iniziali gratuite, con abbonamenti per sbloccare il percorso completo.
+                    </p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center mt-16 md:mt-24">
+                <div class="text-center md:text-left md:order-2">
+                    <img src="https://placehold.co/400x250/5D3FD3/FFFFFF?text=SkillReboot+AI" alt="SkillReboot AI Platform" class="mx-auto md:mx-0 rounded-lg shadow-xl mb-6 border-4 border-purple-600">
+                </div>
+                <div class="text-center md:text-left md:order-1">
+                    <h4 class="text-3xl font-semibold text-white mb-4">SkillReboot: Micro-Formazione Gratuita con IA</h4>
+                    <p class="text-gray-300 leading-relaxed">
+                        Una piattaforma innovativa per consentire a chiunque (specialmente disoccupati o persone a basso reddito) di acquisire micro-competenze digitali e professionali. Guidati da un'IA personalizzata, gli utenti possono accedere a percorsi formativi mirati per migliorare la propria occupabilità e autonomia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hardware Rigenerato & Spazi Accessibili Section -->
+    <section id="hardware" class="bg-gray-900 py-16 px-4">
+        <div class="container mx-auto max-w-5xl">
+            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">2. Hardware Rigenerato & Spazi Accessibili</h3>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <img src="https://placehold.co/400x250/5D3FD3/FFFFFF?text=Spazi+Co-working" alt="Co-working Spaces" class="mx-auto md:mx-0 rounded-lg shadow-xl mb-6 border-4 border-purple-600">
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="text-3xl font-semibold text-white mb-4">Hardware e Aule/Spazi Co-working</h4>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Ci impegniamo a combattere l'obsolescenza programmata e le barriere digitali. Creiamo spazi fisici in zone a basso reddito, dotati di hardware e software di ultima generazione, e connessioni internet veloci. Questi spazi sono usufruibili gratuitamente per un monte ore mensile dagli abitanti del posto, fornendo non solo le conoscenze ma anche i mezzi fisici per sfruttare al meglio l'IA.
+                    </p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center mt-16 md:mt-24">
+                <div class="text-center md:text-left md:order-2">
+                    <img src="https://placehold.co/400x250/5D3FD3/FFFFFF?text=ReDevice+Recycle" alt="ReDevice Hardware Recycling" class="mx-auto md:mx-0 rounded-lg shadow-xl mb-6 border-4 border-purple-600">
+                </div>
+                <div class="text-center md:text-left md:order-1">
+                    <h4 class="text-3xl font-semibold text-white mb-4">ReDevice: Circuito Circolare di Rigenerazione Hardware</h4>
+                    <p class="text-gray-300 leading-relaxed">
+                        Una rete nazionale dedicata al recupero e riuso di PC, tablet e smartphone attraverso accordi con Comuni, scuole e imprese. ReDevice non solo riduce l'impatto ambientale, ma diventa anche una fonte di hardware rigenerato e gratuito per gli utenti di Prometheus e altri servizi IAm.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovazione & Impatto Sociale Section -->
+    <section id="innovazione" class="bg-gray-800 py-16 px-4">
+        <div class="container mx-auto max-w-5xl">
+            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">3. Innovazione & Impatto Sociale</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- IAm EduHub Card -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-2xl font-semibold text-white mb-4">IAm EduHub</h4>
+                        <p class="text-gray-300 mb-4">
+                            Un portale dedicato a scuole ed educatori, offrendo risorse gratuite, guide su IA, diritti digitali, cittadinanza algoritmica ed etica. Forniamo kit didattici per promuovere l'alfabetizzazione AI-centrica a livello nazionale.
+                        </p>
+                    </div>
+                    <a href="#" class="text-purple-300 hover:text-purple-200 transition-colors duration-300 mt-4">Scopri di più &rarr;</a>
+                </div>
+                <!-- Lumen Card -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-2xl font-semibold text-white mb-4">Lumen: Diario Emozionale con IA</h4>
+                        <p class="text-gray-300 mb-4">
+                            Un'interfaccia conversazionale per registrare ed elaborare emozioni e stati d'animo, ricevendo supporto empatico. Sinergico con Prometheus, adattato a uso psicologico ed educativo.
+                        </p>
+                    </div>
+                    <a href="#" class="text-purple-300 hover:text-purple-200 transition-colors duration-300 mt-4">Scopri di più &rarr;</a>
+                </div>
+                <!-- EmotAI Card -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-2xl font-semibold text-white mb-4">EmotAI: Stazioni Urbane di Rilascio Emozionale</h4>
+                        <p class="text-gray-300 mb-4">
+                            Postazioni fisiche in luoghi pubblici dove l'IA empatica aiuta a sfogarsi, riflettere e scrivere. Producono testi anonimi che possono ispirare opere collettive d'arte pubblica.
+                        </p>
+                    </div>
+                    <a href="#" class="text-purple-300 hover:text-purple-200 transition-colors duration-300 mt-4">Scopri di più &rarr;</a>
+                </div>
+                <!-- DreamSeed Card -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-2xl font-semibold text-white mb-4">DreamSeed: Incubatore di Sogni Artistici</h4>
+                        <p class="text-gray-300 mb-4">
+                            L'IA trasforma i sogni descritti dagli utenti in piccole opere d'arte (video, illustrazioni, poesie), con potenziale per mostre fisiche o NFT condivisi.
+                        </p>
+                    </div>
+                    <a href="#" class="text-purple-300 hover:text-purple-200 transition-colors duration-300 mt-4">Scopri di più &rarr;</a>
+                </div>
+                <!-- ZeroBarriera Card -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-2xl font-semibold text-white mb-4">ZeroBarriera: Accessibilità Aumentata</h4>
+                        <p class="text-gray-300 mb-4">
+                            Un toolkit IA open source per semplificare interfacce digitali, testi e video, rendendoli accessibili a persone con difficoltà cognitive o DSA, promuovendo l'inclusione digitale.
+                        </p>
+                    </div>
+                    <a href="#" class="text-purple-300 hover:text-purple-200 transition-colors duration-300 mt-4">Scopri di più &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section (Identical to other pages) -->
+    <footer class="bg-gray-900 text-gray-500 p-8 text-center text-sm">
+        <div class="container mx-auto">
+            <p>&copy; 2025 IAm. Tutti i diritti riservati.</p>
+            <p class="mt-2">Costruito con la visione di un futuro consapevole.</p>
+        </div>
+    </footer>
+</body>
+</html>

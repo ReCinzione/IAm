@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Siamo | IAm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" defer></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d; /* Sfondo scuro */
+            color: #e0e0e0; /* Testo chiaro */
+        }
+        /* Stili personalizzati per il gradiente del bottone */
+        .btn-gradient {
+            background-image: linear-gradient(to right, #6a0dad, #8a2be2, #a020f0);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            background-position: right center;
+            background-size: 200% auto;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(160, 32, 240, 0.4);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Header Section (Identical to other pages) -->
+    <header class="bg-gray-900 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-5xl font-black z-50 hover:scale-105 transition-transform duration-300">
+                <span class="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 text-transparent bg-clip-text drop-shadow-lg">IAm</span>
+            </a>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:text-purple-300 transition-colors duration-300">Home</a></li>
+                    <li><a href="prometheus.html" class="hover:text-purple-300 transition-colors duration-300">Prometheus</a></li>
+                    <li><a href="progetti.html" class="hover:text-purple-300 transition-colors duration-300">I Nostri Progetti</a></li>
+                    <li><a href="chi_siamo.html" class="hover:text-purple-300 transition-colors duration-300">Chi Siamo</a></li>
+                    <li><a href="contatti.html" class="hover:text-purple-300 transition-colors duration-300">Contatti</a></li>
+                    <li><a href="supportaci.html" class="hover:text-purple-300 transition-colors duration-300">Supportaci</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section for Chi Siamo -->
+    <main class="flex-grow container mx-auto px-4 py-16 flex flex-col items-center justify-center text-center">
+        <div class="max-w-4xl">
+            <h2 class="text-6xl font-extrabold text-white mb-6 leading-tight">
+                Chi Siamo: La Visione dietro IAm
+            </h2>
+            <p class="text-xl text-gray-300 mb-8">
+                Siamo un team appassionato che crede nel potere trasformativo dell'Intelligenza Artificiale
+                per l'emancipazione umana e lo sviluppo di un futuro consapevole.
+            </p>
+            <a href="#la-missione"
+               class="btn-gradient text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                Scopri la Nostra Storia
+            </a>
+        </div>
+    </main>
+
+    <!-- Mission & Values Section -->
+    <section id="la-missione" class="bg-gray-800 py-16 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-4xl font-bold text-purple-400 mb-8">La Nostra Missione e Valori</h3>
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                IAm ha come obiettivo principale l’alfabetizzazione digitale delle persone, con particolare attenzione
+                all’implementazione e utilizzo dell’IA come mezzo per emanciparsi dalla necessità di lavorare in maniera
+                tradizionale e avere più tempo e risorse per sviluppare il proprio potenziale umano.
+            </p>
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                La visione di fondo è che con l’IA è possibile per chiunque esprimere al meglio le proprie capacità,
+                rimuovendo le barriere dovute a limitati mezzi e conoscenze per mettere in atto idee e crescita,
+                sia personale che professionale. Vogliamo rendere questa tecnologia disponibile a più persone
+                possibili e alfabetizzarle al suo utilizzo, per guidarle a un’emancipazione da povertà e dipendenza
+                dal lavoro, in un contesto mondiale in cui quest’ultimo sarà sempre meno necessario per gli esseri umani.
+            </p>
+            <p class="text-xl font-bold text-purple-300 mt-8">
+                Siamo una Onlus (o simile) dedicata allo sviluppo, produzione e commercializzazione di prodotti e servizi
+                innovativi ad alto valore tecnologico nell’ambito dell’educazione, dell’inclusione sociale e dell’accesso all’IA.
+            </p>
+        </div>
+    </section>
+
+    <!-- The Problem Section -->
+    <section id="il-problema" class="bg-gray-900 py-16 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-4xl font-bold text-purple-400 mb-8">Il Problema che Risolviamo</h3>
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                Affrontiamo la sfida della **bassa alfabetizzazione digitale** e della **scarsa conoscenza dell'Intelligenza Artificiale**
+                tra ampie fasce della popolazione, specialmente quelle a basso reddito, a causa di difficoltà di accesso e barriere culturali.
+            </p>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-purple-700 max-w-2xl mx-auto mt-8">
+                <h4 class="text-2xl font-semibold text-white mb-4">La Nostra Sfida: Rendere l'IA per Tutti</h4>
+                <p class="text-gray-300 mb-4">
+                    Dai neofiti agli utenti più avanzati, l'IA può semplificare attività e aprire nuove possibilità.
+                    Molti non sanno come funziona, quale sia la sua architettura (es. gli LLM), o come applicarla nella vita.
+                    Questo divario limita la loro capacità di progredire e di cogliere le opportunità del futuro.
+                </p>
+                <p class="text-gray-300 italic text-sm">
+                    (Dati e articoli sulla bassa alfabetizzazione digitale in Italia e la conoscenza dell'IA saranno presto disponibili qui per confermare queste sfide.)
+                </p>
+                 [Image of a conceptual 'customer journey map' with highlighted critical points]
+            </div>
+        </div>
+    </section>
+
+    <!-- The Team Section -->
+    <section id="il-team" class="bg-gray-800 py-16 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-4xl font-bold text-purple-400 mb-12">Il Nostro Team</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Fra Card -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600">
+                    <h4 class="text-2xl font-semibold text-white mb-2">Fra</h4>
+                    <p class="text-purple-300 mb-4">Co-fondatore & Responsabile Sviluppo AI Chatbot</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Si occupa dello sviluppo del chatbot IA (Prometheus), della gestione strategica di IAm
+                        e del social media management (in misura limitata). La sua visione guida l'innovazione tecnologica.
+                    </p>
+                </div>
+                <!-- Marco Card -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600">
+                    <h4 class="text-2xl font-semibold text-white mb-2">Marco</h4>
+                    <p class="text-purple-300 mb-4">Co-fondatore & Responsabile Finanza e Fundraising</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Gestisce gli aspetti finanziari, il fundraising e la gestione operativa di IAm a livello top.
+                        Contribuisce anche al social media management e alla strategia generale.
+                    </p>
+                </div>
+                <!-- Future Team Members -->
+                <div class="md:col-span-2 bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600">
+                    <h4 class="text-2xl font-semibold text-white mb-2">Il Team in Crescita</h4>
+                    <p class="text-gray-300 leading-relaxed">
+                        In fase successiva, prevediamo l'ingresso di un Moderatore/Community Manager (es. Alessandro, con esperienza in gestione gruppi di giochi di ruolo) e di un Social Media Manager dedicato per Prometheus, se i volumi aumenteranno.
+                        Valutiamo anche l'integrazione di "agenti fiscalità" per consulenze dove non è richiesto un commercialista.
+                    </p>
+                    <!-- [Image of a conceptual organization chart with key roles and skills] -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap/Timeline Section -->
+    <section id="roadmap" class="bg-gray-900 py-16 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-4xl font-bold text-purple-400 mb-8">Roadmap: Il Nostro Percorso Futuro</h3>
+            <p class="text-lg text-gray-300 leading-relaxed mb-8">
+                Siamo costantemente al lavoro per realizzare la nostra visione. Ecco le tappe principali del nostro viaggio:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg border border-purple-700">
+                    <h4 class="text-2xl font-semibold text-white mb-2">Fase 1: Lancio & Consolidamento di Prometheus</h4>
+                    <ul class="list-disc list-inside text-gray-300 ml-4 space-y-2">
+                        <li>Finalizzazione della versione tecnica dell'app Prometheus.</li>
+                        <li>Sviluppo della grafica dell'app e dell'interfaccia utente intuitiva.</li>
+                        <li>Creazione e gestione dei profili social di Prometheus (Instagram/TikTok).</li>
+                        <li>Fase di test della versione Beta dell'app.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg border border-purple-700">
+                    <h4 class="text-2xl font-semibold text-white mb-2">Fase 2: Espansione & Comunità</h4>
+                    <ul class="list-disc list-inside text-gray-300 ml-4 space-y-2">
+                        <li>Definizione e apertura della forma societaria (Onlus o simile).</li>
+                        <li>Lancio dei primi corsi online con agenti virtuali.</li>
+                        <li>Avvio dei progetti legati all'hardware rigenerato (ReDevice).</li>
+                        <li>Inizio della costruzione attiva della comunità "Mondi Paralleli".</li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2 bg-gray-800 p-6 rounded-lg shadow-lg border border-purple-700">
+                    <h4 class="text-2xl font-semibold text-white mb-2">Fase 3: Innovazione & Impatto Amplificato</h4>
+                    <ul class="list-disc list-inside text-gray-300 ml-4 space-y-2">
+                        <li>Implementazione di progetti come Lumen, EmotAI, DreamSeed e ZeroBarriera.</li>
+                        <li>Esplorazione dell'integrazione NFT per le opere personali.</li>
+                        <li>Sviluppo del "super team" di agenti AI per il supporto agli utenti.</li>
+                        <li>Partnership strategiche per l'espansione degli spazi e delle risorse.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- [Image of a simplified Gantt chart or arrow roadmap] -->
+        </div>
+    </section>
+
+    <!-- General CTA to Support IAm -->
+    <section class="bg-gray-800 py-16 px-4 text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-4xl font-bold text-white mb-8">Unisciti alla Visione di IAm</h3>
+            <p class="text-xl text-gray-300 leading-relaxed mb-10">
+                Siamo un progetto in crescita, spinto dalla convinzione che l'Intelligenza Artificiale possa essere
+                la chiave per un futuro più libero, consapevole e collaborativo. Ogni contributo ci avvicina
+                al nostro obiettivo.
+            </p>
+            <a href="supportaci.html"
+               class="btn-gradient text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                Scopri Come Supportarci
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Section (Identical to other pages) -->
+    <footer class="bg-gray-900 text-gray-500 p-8 text-center text-sm">
+        <div class="container mx-auto">
+            <p>&copy; 2025 IAm. Tutti i diritti riservati.</p>
+            <p class="mt-2">Costruito con la visione di un futuro consapevole.</p>
+        </div>
+    </footer>
+</body>
+</html>
