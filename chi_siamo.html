@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Siamo | IAm</title>
+    <title>Chi Siamo | IAm</title> <!-- Contenuto HEAD specifico -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/main.js" defer></script>
 </head>
 <body class="flex flex-col min-h-screen">
-    <!-- Header Section (Identical to other pages) -->
-    <header class="text-white p-4 w-full z-50"> <!-- Rimosse classi bg-gray-900, shadow-lg. Fixed/Sticky è gestito da style.css -->
+    <!-- Header (come da scheletro) -->
+    <header class="text-white p-4 w-full z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="logo-link">
                 <span class="logo-text">IAm</span>
@@ -28,9 +28,10 @@
         </div>
     </header>
 
-    <!-- Hero Section for Chi Siamo -->
+    <!-- Hero Section (<main>) -->
     <main class="flex-grow container mx-auto px-4 py-16 flex flex-col items-center justify-center text-center">
         <div class="max-w-4xl">
+            <!-- Contenuto Hero di chi_siamo.html qui -->
             <h2 class="text-6xl font-extrabold text-white mb-6 leading-tight">
                 Chi Siamo: La Visione dietro IAm
             </h2>
@@ -45,10 +46,11 @@
         </div>
     </main>
 
-    <!-- Mission & Values Section -->
+    <!-- Sezione Mission & Values -->
     <section id="la-missione" class="bg-gray-800 py-16 px-4">
-        <div class="container mx-auto max-w-5xl text-center"> <!-- Modificato max-w-4xl a max-w-5xl -->
-            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">La Nostra Missione e Valori</h3> <!-- Aggiunto text-center e mb-12, mb-8 era già ok ma uniformato -->
+        <div class="container mx-auto max-w-5xl text-center">
+            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">La Nostra Missione e Valori</h3>
+            <!-- Contenuto della sezione di chi_siamo.html qui -->
             <p class="text-lg text-gray-300 leading-relaxed mb-6">
                 IAm ha come obiettivo principale l’alfabetizzazione digitale delle persone, con particolare attenzione
                 all’implementazione e utilizzo dell’IA come mezzo per emanciparsi dalla necessità di lavorare in maniera
@@ -68,15 +70,16 @@
         </div>
     </section>
 
-    <!-- The Problem Section -->
+    <!-- Sezione The Problem -->
     <section id="il-problema" class="bg-gray-900 py-16 px-4">
-        <div class="container mx-auto max-w-5xl text-center"> <!-- Modificato max-w-4xl a max-w-5xl -->
-            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Il Problema che Risolviamo</h3> <!-- Aggiunto text-center e mb-12 -->
+        <div class="container mx-auto max-w-5xl text-center">
+            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Il Problema che Risolviamo</h3>
+            <!-- Contenuto della sezione di chi_siamo.html qui -->
             <p class="text-lg text-gray-300 leading-relaxed mb-6">
                 Affrontiamo la sfida della **bassa alfabetizzazione digitale** e della **scarsa conoscenza dell'Intelligenza Artificiale**
                 tra ampie fasce della popolazione, specialmente quelle a basso reddito, a causa di difficoltà di accesso e barriere culturali.
             </p>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600 max-w-2xl mx-auto mt-8"> <!-- Modificato bg-gray-800->700, shadow-xl->lg, border-purple-700->600 -->
+            <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600 max-w-2xl mx-auto mt-8">
                 <h4 class="text-2xl font-semibold text-white mb-4">La Nostra Sfida: Rendere l'IA per Tutti</h4>
                 <p class="text-gray-300 mb-4">
                     Dai neofiti agli utenti più avanzati, l'IA può semplificare attività e aprire nuove possibilità.
@@ -86,17 +89,17 @@
                 <p class="text-gray-300 italic text-sm">
                     (Dati e articoli sulla bassa alfabetizzazione digitale in Italia e la conoscenza dell'IA saranno presto disponibili qui per confermare queste sfide.)
                 </p>
-                 [Image of a conceptual 'customer journey map' with highlighted critical points]
+                <!-- [Image of a conceptual 'customer journey map' with highlighted critical points] -->
             </div>
         </div>
     </section>
 
-    <!-- The Team Section -->
+    <!-- Sezione The Team -->
     <section id="il-team" class="bg-gray-800 py-16 px-4">
-        <div class="container mx-auto max-w-5xl text-center"> <!-- Modificato max-w-4xl a max-w-5xl -->
-            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Il Nostro Team</h3> <!-- Aggiunto text-center -->
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Fra Card -->
+        <div class="container mx-auto max-w-5xl text-center">
+             <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Il Nostro Team</h3>
+             <!-- Contenuto della sezione di chi_siamo.html qui -->
+            <div class="grid md:grid-cols-2 gap-8 text-left"> <!-- text-left per le card -->
                 <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600">
                     <h4 class="text-2xl font-semibold text-white mb-2">Fra</h4>
                     <p class="text-purple-300 mb-4">Co-fondatore & Responsabile Sviluppo AI Chatbot</p>
@@ -105,7 +108,6 @@
                         e del social media management (in misura limitata). La sua visione guida l'innovazione tecnologica.
                     </p>
                 </div>
-                <!-- Marco Card -->
                 <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600">
                     <h4 class="text-2xl font-semibold text-white mb-2">Marco</h4>
                     <p class="text-purple-300 mb-4">Co-fondatore & Responsabile Finanza e Fundraising</p>
@@ -114,7 +116,6 @@
                         Contribuisce anche al social media management e alla strategia generale.
                     </p>
                 </div>
-                <!-- Future Team Members -->
                 <div class="md:col-span-2 bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600">
                     <h4 class="text-2xl font-semibold text-white mb-2">Il Team in Crescita</h4>
                     <p class="text-gray-300 leading-relaxed">
@@ -127,15 +128,16 @@
         </div>
     </section>
 
-    <!-- Roadmap/Timeline Section -->
+    <!-- Sezione Roadmap/Timeline -->
     <section id="roadmap" class="bg-gray-900 py-16 px-4">
-        <div class="container mx-auto max-w-5xl text-center"> <!-- Modificato max-w-4xl a max-w-5xl -->
-            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Roadmap: Il Nostro Percorso Futuro</h3> <!-- Aggiunto text-center e mb-12 -->
+        <div class="container mx-auto max-w-5xl text-center">
+            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Roadmap: Il Nostro Percorso Futuro</h3>
+            <!-- Contenuto della sezione di chi_siamo.html qui -->
             <p class="text-lg text-gray-300 leading-relaxed mb-8">
                 Siamo costantemente al lavoro per realizzare la nostra visione. Ecco le tappe principali del nostro viaggio:
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600"> <!-- Modificato bg-gray-800->700, border-purple-700->600 -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600">
                     <h4 class="text-2xl font-semibold text-white mb-2">Fase 1: Lancio & Consolidamento di Prometheus</h4>
                     <ul class="list-disc list-inside text-gray-300 ml-4 space-y-2">
                         <li>Finalizzazione della versione tecnica dell'app Prometheus.</li>
@@ -144,7 +146,7 @@
                         <li>Fase di test della versione Beta dell'app.</li>
                     </ul>
                 </div>
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600"> <!-- Modificato bg-gray-800->700, border-purple-700->600 -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600">
                     <h4 class="text-2xl font-semibold text-white mb-2">Fase 2: Espansione & Comunità</h4>
                     <ul class="list-disc list-inside text-gray-300 ml-4 space-y-2">
                         <li>Definizione e apertura della forma societaria (Onlus o simile).</li>
@@ -153,7 +155,7 @@
                         <li>Inizio della costruzione attiva della comunità "Mondi Paralleli".</li>
                     </ul>
                 </div>
-                <div class="md:col-span-2 bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600"> <!-- Modificato bg-gray-800->700, border-purple-700->600 -->
+                <div class="md:col-span-2 bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600">
                     <h4 class="text-2xl font-semibold text-white mb-2">Fase 3: Innovazione & Impatto Amplificato</h4>
                     <ul class="list-disc list-inside text-gray-300 ml-4 space-y-2">
                         <li>Implementazione di progetti come Lumen, EmotAI, DreamSeed e ZeroBarriera.</li>
@@ -167,10 +169,11 @@
         </div>
     </section>
 
-    <!-- General CTA to Support IAm -->
-    <section class="bg-gray-800 py-16 px-4 text-center">
-        <div class="container mx-auto max-w-5xl text-center"> <!-- Modificato max-w-4xl a max-w-5xl, aggiunto text-center -->
-            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Unisciti alla Visione di IAm</h3> <!-- Uniformato stile titolo -->
+    <!-- Sezione General CTA to Support IAm -->
+    <section class="bg-gray-800 py-16 px-4 text-center"> <!-- Nessun ID specifico, text-center sulla section -->
+        <div class="container mx-auto max-w-5xl"> <!-- text-center era già sul parent, qui non serve duplicare se il contenuto è già centrato dall'H3 e P -->
+            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Unisciti alla Visione di IAm</h3>
+            <!-- Contenuto della sezione di chi_siamo.html qui -->
             <p class="text-xl text-gray-300 leading-relaxed mb-10">
                 Siamo un progetto in crescita, spinto dalla convinzione che l'Intelligenza Artificiale possa essere
                 la chiave per un futuro più libero, consapevole e collaborativo. Ogni contributo ci avvicina
@@ -183,7 +186,7 @@
         </div>
     </section>
 
-    <!-- Footer Section (Identical to other pages) -->
+    <!-- Footer (come da scheletro) -->
     <footer class="bg-gray-900 text-gray-500 p-8 text-center text-sm">
         <div class="container mx-auto">
             <p>&copy; 2025 IAm. Tutti i diritti riservati.</p>

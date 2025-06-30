@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatti | IAm</title>
-    <!-- Caricamento di Tailwind CSS per uno styling rapido e responsivo -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Contatti | IAm</title> <!-- Contenuto HEAD specifico -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Mantenuto se necessario, ma style.css dovrebbe coprire -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Il file style.css collegato dovrebbe gestire body e btn-gradient -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" defer></script>
 </head>
-<body class="flex flex-col min-h-screen"> <!-- Rimosso bg-gray-900 text-gray-100 dal body, gestito da style.css -->
-    <!-- Header Section (Identical to other pages) -->
-    <header class="text-white p-4 w-full z-50"> <!-- Rimosse classi bg-gray-900, shadow-lg. w-full e z-50 aggiunte per coerenza -->
+<body class="flex flex-col min-h-screen">
+    <!-- Header (come da scheletro) -->
+    <header class="text-white p-4 w-full z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="logo-link">
                 <span class="logo-text">IAm</span>
@@ -30,9 +29,10 @@
         </div>
     </header>
 
-    <!-- Hero Section for Contatti -->
+    <!-- Hero Section (<main>) -->
     <main class="flex-grow container mx-auto px-4 py-16 flex flex-col items-center justify-center text-center">
         <div class="max-w-4xl">
+            <!-- Contenuto Hero di contatti.html qui -->
             <h2 class="text-6xl font-extrabold text-white mb-6 leading-tight">
                 Contattaci: Iniziamo un Dialogo
             </h2>
@@ -42,10 +42,11 @@
         </div>
     </main>
 
-    <!-- Contact Information Section -->
+    <!-- Sezione Informazioni di Contatto -->
     <section id="informazioni-contatto" class="bg-gray-800 py-16 px-4">
-        <div class="container mx-auto max-w-5xl text-center"> <!-- Modificato max-w-4xl a max-w-5xl -->
-            <h3 class="text-4xl font-bold text-purple-400 mb-12">Informazioni di Contatto</h3>
+        <div class="container mx-auto max-w-5xl text-center">
+            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Informazioni di Contatto</h3>
+            <!-- Contenuto della sezione di contatti.html qui -->
             <div class="grid md:grid-cols-2 gap-8 text-left">
                 <!-- Email Card -->
                 <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600">
@@ -67,15 +68,13 @@
                     <ul class="flex justify-center md:justify-start space-x-4 mt-4">
                         <li><a href="https://instagram.com/PrometheusSpecchio" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:text-purple-200 transition-colors duration-300">Instagram</a></li>
                         <!-- Add other social media links as they become relevant -->
-                        <!-- <li><a href="#" class="text-purple-300 hover:text-purple-200 transition-colors duration-300">LinkedIn</a></li> -->
-                        <!-- <li><a href="#" class="text-purple-300 hover:text-purple-200 transition-colors duration-300">TikTok</a></li> -->
                     </ul>
                 </div>
             </div>
 
             <!-- Placeholder Contact Form Section -->
-            <div class="bg-gray-700 p-8 rounded-lg shadow-lg border border-purple-600 mt-12 max-w-2xl mx-auto text-left"> <!-- Modificato shadow-xl a shadow-lg, border-purple-700 a border-purple-600 -->
-                <h3 class="text-3xl font-bold text-purple-400 mb-6 text-center">Inviaci un Messaggio</h3> <!-- Modificato text-white a text-purple-400 -->
+            <div class="bg-gray-700 p-8 rounded-lg shadow-lg border border-purple-600 mt-12 max-w-2xl mx-auto text-left">
+                <h3 class="text-3xl font-bold text-purple-400 mb-6 text-center">Inviaci un Messaggio</h3>
                 <form action="#" method="POST" class="space-y-6">
                     <div>
                         <label for="name" class="block text-gray-300 text-lg font-semibold mb-2">Nome Completo</label>
@@ -103,7 +102,7 @@
         </div>
     </section>
 
-    <!-- Footer Section (Identical to other pages) -->
+    <!-- Footer (come da scheletro) -->
     <footer class="bg-gray-900 text-gray-500 p-8 text-center text-sm">
         <div class="container mx-auto">
             <p>&copy; 2025 IAm. Tutti i diritti riservati.</p>

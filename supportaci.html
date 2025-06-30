@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supportaci | IAm</title>
-    <!-- Caricamento di Tailwind CSS per uno styling rapido e responsivo -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Supportaci | IAm</title> <!-- Contenuto HEAD specifico -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Mantenuto se necessario -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css"> <!-- Aggiunto link a style.css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" defer></script>
 </head>
-<body class="flex flex-col min-h-screen"> <!-- Stili body da style.css -->
-    <!-- Header Section (Identical to other pages) -->
-    <header class="text-white p-4 w-full z-50"> <!-- Classi header da style.css e Tailwind essenziali -->
+<body class="flex flex-col min-h-screen">
+    <!-- Header (come da scheletro) -->
+    <header class="text-white p-4 w-full z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="logo-link">
                 <span class="logo-text">IAm</span>
@@ -29,9 +29,10 @@
         </div>
     </header>
 
-    <!-- Hero Section for Supportaci -->
+    <!-- Hero Section (<main>) -->
     <main class="flex-grow container mx-auto px-4 py-16 flex flex-col items-center justify-center text-center">
         <div class="max-w-4xl">
+            <!-- Contenuto Hero di supportaci.html qui -->
             <h2 class="text-6xl font-extrabold text-white mb-6 leading-tight">
                 Supportaci: Costruisci il Futuro con Noi
             </h2>
@@ -46,10 +47,11 @@
         </div>
     </main>
 
-    <!-- Why Support Us Section -->
+    <!-- Sezione "Perché il Tuo Supporto è Fondamentale" -->
     <section id="perche-supportarci" class="bg-gray-800 py-16 px-4">
-        <div class="container mx-auto max-w-5xl text-center"> <!-- Modificato max-w-4xl a max-w-5xl -->
-            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Perché il Tuo Supporto è Fondamentale</h3> <!-- Aggiunto text-center e mb-12 (era mb-8) -->
+        <div class="container mx-auto max-w-5xl text-center">
+            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Perché il Tuo Supporto è Fondamentale</h3>
+            <!-- Contenuto della sezione qui -->
             <p class="text-lg text-gray-300 leading-relaxed mb-6">
                 IAm è un'organizzazione no-profit (o simile) che si impegna a creare un futuro in cui l'IA sia accessibile a tutti, non solo a pochi. Il tuo contributo ci permette di:
             </p>
@@ -66,13 +68,13 @@
         </div>
     </section>
 
-    <!-- How to Support Section -->
+    <!-- Sezione "Come Puoi Sostenerci" -->
     <section id="come-supportare" class="bg-gray-900 py-16 px-4">
         <div class="container mx-auto max-w-5xl text-center">
-            <h3 class="text-4xl font-bold text-purple-400 mb-12">Come Puoi Sostenerci</h3>
+            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Come Puoi Sostenerci</h3>
+            <!-- Contenuto della sezione qui -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Direct Donation Card -->
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600 flex flex-col justify-between"> <!-- Modificate classi bg, shadow, border -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600 flex flex-col justify-between">
                     <div>
                         <h4 class="text-2xl font-semibold text-white mb-4">Donazioni Dirette</h4>
                         <p class="text-gray-300 mb-4">
@@ -83,8 +85,7 @@
                     <a href="#" class="btn-gradient text-white font-bold py-2 px-4 rounded-full text-md mt-4">Dona Ora (Presto Online!)</a>
                 </div>
 
-                <!-- Crowdfunding Card -->
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600 flex flex-col justify-between"> <!-- Modificate classi bg, shadow, border -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600 flex flex-col justify-between">
                     <div>
                         <h4 class="text-2xl font-semibold text-white mb-4">Campagne di Crowdfunding</h4>
                         <p class="text-gray-300 mb-4">
@@ -108,8 +109,7 @@
                     </div>
                 </div>
 
-                <!-- Partnerships Card -->
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600 flex flex-col justify-between"> <!-- Modificate classi bg, shadow, border -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg border border-purple-600 flex flex-col justify-between">
                     <div>
                         <h4 class="text-2xl font-semibold text-white mb-4">Partnership & Collaborazioni</h4>
                         <p class="text-gray-300 mb-4">
@@ -122,10 +122,11 @@
         </div>
     </section>
 
-    <!-- Financial Transparency Section -->
+    <!-- Sezione "Trasparenza Finanziaria" -->
     <section id="trasparenza-finanziaria" class="bg-gray-800 py-16 px-4">
-        <div class="container mx-auto max-w-5xl text-center"> <!-- Modificato max-w-4xl a max-w-5xl -->
-            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Trasparenza Finanziaria</h3> <!-- Aggiunto text-center e mb-12 (era mb-8) -->
+        <div class="container mx-auto max-w-5xl text-center">
+            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Trasparenza Finanziaria</h3>
+            <!-- Contenuto della sezione qui -->
             <p class="text-lg text-gray-300 leading-relaxed mb-6">
                 IAm si impegna alla massima trasparenza nella gestione dei fondi ricevuti. Ogni risorsa viene impiegata
                 per sostenere direttamente i nostri progetti di alfabetizzazione digitale, sviluppo software e supporto
@@ -141,7 +142,7 @@
         </div>
     </section>
 
-    <!-- Footer Section (Identical to other pages) -->
+    <!-- Footer (come da scheletro) -->
     <footer class="bg-gray-900 text-gray-500 p-8 text-center text-sm">
         <div class="container mx-auto">
             <p>&copy; 2025 IAm. Tutti i diritti riservati.</p>

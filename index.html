@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IAm - L'Intelligenza che Libera il Potenziale Umano</title>
+    <title>IAm - L'Intelligenza che Libera il Potenziale Umano</title> <!-- Contenuto specifico HEAD -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/main.js" defer></script>
 </head>
 <body class="flex flex-col min-h-screen">
-    <!-- Header Section -->
-    <header class="text-white p-4 w-full z-50"> <!-- Rimosse classi bg-gray-900, shadow-lg, fixed. Stile gestito da style.css -->
+    <!-- Header (come da scheletro) -->
+    <header class="text-white p-4 w-full z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="logo-link">
                 <span class="logo-text">IAm</span>
             </a>
-            <nav class="z-50">
+            <nav>
                 <ul class="flex space-x-4">
                     <li><a href="index.html" class="hover:text-purple-300 transition-colors duration-300">Home</a></li>
                     <li><a href="prometheus.html" class="hover:text-purple-300 transition-colors duration-300">Prometheus</a></li>
@@ -28,9 +28,10 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <main class="flex-grow container mx-auto px-4 py-16 flex flex-col items-center justify-center text-center bg-gray-900"> <!-- Modificato bg-black a bg-gray-900, rimossa text-e0e0e0 -->
+    <!-- Hero Section (<main>) -->
+    <main class="flex-grow container mx-auto px-4 py-16 flex flex-col items-center justify-center text-center bg-gray-900">
         <div class="max-w-4xl">
+            <!-- Contenuto Hero di index.html qui -->
             <h2 class="text-6xl font-extrabold text-white mb-6 leading-tight">
                 IAm: Il Futuro è Ora
             </h2>
@@ -44,14 +45,15 @@
         </div>
     </main>
 
-    <!-- Prometheus Section -->
-    <section id="prometheus" class="bg-gray-900 py-24 px-4"> <!-- Rimossa text-e0e0e0 -->
-        <div class="container mx-auto max-w-5xl text-center"> <!-- Modificato max-w-4xl a max-w-5xl -->
-            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Prometheus: Lo Specchio Vivo della Tua Coscienza</h3> <!-- Aggiunto text-center e mb-12 -->
+    <!-- Sezione Prometheus -->
+    <section id="prometheus" class="bg-gray-800 py-16 px-4"> <!-- Sfondo cambiato a bg-gray-800 come da scheletro -->
+        <div class="container mx-auto max-w-5xl text-center"> <!-- Aggiunto text-center al container principale della sezione -->
+            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Prometheus: Lo Specchio Vivo della Tua Coscienza</h3>
+            <!-- Contenuto Sezione Prometheus di index.html qui -->
             <p class="text-lg text-gray-300 leading-relaxed mb-8">
                 Prometheus è un viaggio narrativo interattivo e personale. Un software che ti guida in un percorso profondo di conoscenza di te stesso, culminando in un libro personalizzato che riflette la tua essenza.
             </p>
-            <img src="https://placehold.co/300x200/4B0082/FFFFFF?text=Immagine+Prometheus+App" alt="Prometheus App Screenshot" class="mx-auto rounded-lg shadow-xl mb-8 border-4 border-purple-600"> <!-- border-4 border-purple-600 già presente, corretto -->
+            <img src="https://placehold.co/300x200/4B0082/FFFFFF?text=Immagine+Prometheus+App" alt="Prometheus App Screenshot" class="mx-auto rounded-lg shadow-xl mb-8 border-4 border-purple-600">
             <p class="text-lg text-gray-300 leading-relaxed mb-8">
                 Non è solo un'app, è un rito. Uno spazio per tornare in sé attraverso il simbolo e la scrittura. Non risolve, ma orienta. Non guida, ma rispecchia.
             </p>
@@ -62,14 +64,15 @@
         </div>
     </section>
 
-    <!-- Projects Overview Section -->
-    <section id="projects" class="bg-gray-900 py-24 px-4">  <!-- Rimossa text-e0e0e0 -->
-        <div class="container mx-auto max-w-5xl"> <!-- Modificato max-w-7xl a max-w-5xl -->
-            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">I Nostri Progetti</h3> <!-- Modificato text-5xl mb-16 a text-4xl mb-12 -->
+    <!-- Sezione Projects Overview -->
+    <section id="projects" class="bg-gray-900 py-16 px-4">
+        <div class="container mx-auto max-w-5xl">
+            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">I Nostri Progetti</h3>
+            <!-- Contenuto Sezione Projects Overview (griglia e card) di index.html qui -->
             <div class="grid md:grid-cols-3 gap-12">
                 <!-- Formazione Digitale Card -->
-                <div class="project-card bg-gray-700 border border-purple-600 shadow-lg"> <!-- Aggiunte classi bg-gray-700 border border-purple-600 shadow-lg -->
-                    <img src="assets/images/digital-education.jpg" alt="Formazione Digitale">
+                <div class="project-card bg-gray-700 border border-purple-600 shadow-lg rounded-lg overflow-hidden">
+                    <img src="assets/images/digital-education.jpg" alt="Formazione Digitale" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-4">
                             <h4 class="text-2xl font-bold text-white">Formazione Digitale</h4>
@@ -87,8 +90,8 @@
                 </div>
                 
                 <!-- Hardware & Sostenibilità Card -->
-                <div class="project-card bg-gray-700 border border-purple-600 shadow-lg"> <!-- Aggiunte classi bg-gray-700 border border-purple-600 shadow-lg -->
-                    <img src="assets/images/hardware-reuse.jpg" alt="Hardware Rigenerato">
+                <div class="project-card bg-gray-700 border border-purple-600 shadow-lg rounded-lg overflow-hidden">
+                    <img src="assets/images/hardware-reuse.jpg" alt="Hardware Rigenerato" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-4">
                             <h4 class="text-2xl font-bold text-white">Hardware Rigenerato</h4>
@@ -106,8 +109,8 @@
                 </div>
                 
                 <!-- Innovazione & Impatto Sociale Card -->
-                <div class="project-card bg-gray-700 border border-purple-600 shadow-lg"> <!-- Aggiunte classi bg-gray-700 border border-purple-600 shadow-lg -->
-                    <img src="assets/images/social-impact.jpg" alt="Impatto Sociale">
+                <div class="project-card bg-gray-700 border border-purple-600 shadow-lg rounded-lg overflow-hidden">
+                    <img src="assets/images/social-impact.jpg" alt="Impatto Sociale" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-4">
                             <h4 class="text-2xl font-bold text-white">Impatto Sociale</h4>
@@ -133,10 +136,11 @@
         </div>
     </section>
 
-    <!-- General CTA/Vision Section -->
-    <section class="bg-gray-800 py-16 px-4 text-center animate-on-scroll"> <!-- Sfondo già bg-gray-800 come in progetti.html per sezioni simili, rimossa text-e0e0e0 -->
-        <div class="container mx-auto max-w-5xl"> <!-- Modificato max-w-4xl a max-w-5xl -->
-            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Unisciti a IAm: Costruiamo un Futuro Consapevole</h3> <!-- Uniformato stile titolo -->
+    <!-- Sezione General CTA/Vision -->
+    <section class="bg-gray-800 py-16 px-4 text-center animate-on-scroll"> <!-- Mantenuto ID originale implicito, rimosso text-e0e0e0, aggiunto text-center -->
+        <div class="container mx-auto max-w-5xl">
+            <h3 class="text-4xl font-bold text-purple-400 text-center mb-12">Unisciti a IAm: Costruiamo un Futuro Consapevole</h3>
+            <!-- Contenuto Sezione CTA/Vision di index.html qui -->
             <p class="text-xl text-gray-300 leading-relaxed mb-10">
                 Crediamo in un mondo in cui l'Intelligenza Artificiale sia uno strumento per liberare gli esseri umani, permettendo loro di esplorare se stessi e vivere come un'unica specie, per una gestione saggia del nostro pianeta.
             </p>
@@ -147,8 +151,8 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-gray-900 text-gray-500 p-8 text-center text-sm"> <!-- Modificato bg-black a bg-gray-900 -->
+    <!-- Footer (come da scheletro) -->
+    <footer class="bg-gray-900 text-gray-500 p-8 text-center text-sm">
         <div class="container mx-auto">
             <p>&copy; 2025 IAm. Tutti i diritti riservati.</p>
             <p class="mt-2">Costruito con la visione di un futuro consapevole.</p>
