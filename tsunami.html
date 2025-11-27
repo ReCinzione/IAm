@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tsunami - Task manager ADHD-friendly che impara come funzioni e lavora con te, non contro di te. Pattern detection, gamificazione, privacy totale.">
+    <title>Tsunami | IAm</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        /* Tsunami-specific styles */
+        .tsunami-hero {
+            background: linear-gradient(180deg, 
+                var(--void-black) 0%, 
+                rgba(0, 180, 216, 0.1) 50%, 
+                var(--void-black) 100%);
+        }
+        
+        .tsunami-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, 
+                rgba(0, 180, 216, 0.15) 0%, 
+                transparent 60%);
+            pointer-events: none;
+        }
+        
+        .wave-visual {
+            width: 400px;
+            height: 300px;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 300%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%2300B4D8' fill-opacity='0.3' d='M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,165.3C672,171,768,213,864,213.3C960,213,1056,171,1152,149.3C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+            animation: waveMove 8s linear infinite;
+        }
+        
+        .wave:nth-child(2) {
+            bottom: 20px;
+            animation-delay: -2s;
+            opacity: 0.5;
+        }
+        
+        .wave:nth-child(3) {
+            bottom: 40px;
+            animation-delay: -4s;
+            opacity: 0.3;
+        }
+        
+        @keyframes waveMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(33.33%); }
+        }
+        
+        .feature-showcase {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+        }
+        
+        .feature-card {
+            background: var(--void-medium);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            transition: all 0.4s var(--ease-out-expo);
+        }
+        
+        .feature-card:hover {
+            border-color: rgba(0, 180, 216, 0.3);
+            transform: translateY(-4px);
+        }
+        
+        .feature-card.highlight {
+            grid-column: span 2;
+            background: linear-gradient(135deg, 
+                rgba(0, 180, 216, 0.1) 0%, 
+                var(--void-medium) 100%);
+            border-color: rgba(0, 180, 216, 0.2);
+        }
+        
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            background: var(--gradient-tsunami);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .feature-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .pattern-example {
+            background: var(--void-deep);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin-top: var(--space-sm);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+        }
+        
+        .pattern-example .insight {
+            color: var(--tsunami-blue);
+        }
+        
+        .comparison-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+        
+        .comparison-card {
+            padding: var(--space-md);
+            border-radius: var(--radius-lg);
+        }
+        
+        .comparison-card.old {
+            background: rgba(232, 72, 85, 0.1);
+            border: 1px solid rgba(232, 72, 85, 0.2);
+        }
+        
+        .comparison-card.new {
+            background: rgba(0, 180, 216, 0.1);
+            border: 1px solid rgba(0, 180, 216, 0.2);
+        }
+        
+        .comparison-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-sm);
+            font-weight: 700;
+        }
+        
+        .comparison-card.old .comparison-header {
+            color: var(--fire-ember);
+        }
+        
+        .comparison-card.new .comparison-header {
+            color: var(--tsunami-blue);
+        }
+        
+        .comparison-list {
+            list-style: none;
+        }
+        
+        .comparison-list li {
+            padding: var(--space-xs) 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-xs);
+        }
+        
+        .comparison-list li::before {
+            content: '→';
+            flex-shrink: 0;
+        }
+        
+        .progress-bar {
+            background: var(--void-light);
+            border-radius: var(--radius-full);
+            height: 12px;
+            overflow: hidden;
+            margin: var(--space-md) 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient-tsunami);
+            border-radius: var(--radius-full);
+            transition: width 1s var(--ease-out-expo);
+        }
+        
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animated"></div>
+    <div class="grain"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">IAm</a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="prometheus.html" class="nav-link">Prometheus</a></li>
+                <li><a href="tsunami.html" class="nav-link active">Tsunami</a></li>
+                <li><a href="visione.html" class="nav-link">Visione</a></li>
+                <li><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+                <li><a href="supportaci.html" class="nav-link">Supportaci</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero tsunami-hero">
+        <div class="hero-content">
+            <span class="section-label animate-on-scroll">Task Manager ADHD-Friendly</span>
+            
+            <h1 class="hero-title animate-on-scroll stagger-1">
+                <span class="highlight" style="background: var(--gradient-tsunami); -webkit-background-clip: text;">Tsunami</span>
+            </h1>
+            
+            <p class="hero-subtitle animate-on-scroll stagger-2">
+                "Non ti dice come devi funzionare. 
+                Impara come funzioni e lavora con te."
+            </p>
+            
+            <div class="hero-cta animate-on-scroll stagger-3">
+                <a href="#funzionalita" class="btn btn-primary" style="background: var(--gradient-tsunami);">
+                    Scopri le funzionalità
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12l7 7 7-7"/>
+                    </svg>
+                </a>
+                <a href="#stato-sviluppo" class="btn btn-secondary">Stato dello sviluppo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="section section-dark" id="il-problema">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">Il Problema</span>
+                <h2 class="section-title animate-on-scroll stagger-1">La produttività tradizionale non funziona per tutti</h2>
+            </div>
+            
+            <div class="comparison-block">
+                <div class="comparison-card old animate-on-scroll stagger-2">
+                    <div class="comparison-header">
+                        <span>❌</span> Task Manager Tradizionali
+                    </div>
+                    <ul class="comparison-list">
+                        <li>Ti dicono che devi essere "più organizzato"</li>
+                        <li>Assumono che tutti funzionino allo stesso modo</li>
+                        <li>Liste infinite che generano ansia</li>
+                        <li>Nessuna comprensione dei tuoi pattern</li>
+                        <li>Ti fanno sentire "rotto" quando non funzioni</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card new animate-on-scroll stagger-3">
+                    <div class="comparison-header">
+                        <span>✓</span> Tsunami
+                    </div>
+                    <ul class="comparison-list">
+                        <li>Impara come funzioni realmente</li>
+                        <li>Si adatta ai tuoi cicli di energia</li>
+                        <li>Trasforma il caos in ordine comprensibile</li>
+                        <li>Trova i tuoi pattern e te li mostra</li>
+                        <li>Lavora CON te, non CONTRO di te</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="quote-block animate-on-scroll stagger-4" style="border-left-color: var(--tsunami-blue);">
+                <p>
+                    "Non sei rotto. Forse funzioni in modo diverso, e basta. 
+                    Tsunami ti aiuta a scoprire come."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" id="funzionalita">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">Funzionalità</span>
+                <h2 class="section-title animate-on-scroll stagger-1">Costruito per menti che funzionano diversamente</h2>
+            </div>
+            
+            <div class="feature-showcase">
+                <!-- Pattern Detection - Highlight -->
+                <div class="feature-card highlight animate-on-scroll stagger-2">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">Pattern Detection con IA</h3>
+                    <p class="feature-description">
+                        L'intelligenza artificiale analizza come lavori nel tempo e trova pattern 
+                        che tu stesso non vedi. Non ti giudica — ti mostra uno specchio.
+                    </p>
+                    <div class="pattern-example">
+                        <span class="insight">"Ho notato che completi l'78% dei task creativi creati di mattina. 
+                        I task con 'chiamata' o 'email' vengono rimandati in media 3 volte. 
+                        Vuoi provare a raggrupparli in un blocco unico?"</span>
+                    </div>
+                </div>
+                
+                <!-- Gamification -->
+                <div class="feature-card animate-on-scroll stagger-3">
+                    <div class="feature-icon">🎮</div>
+                    <h3 class="feature-title">Gamificazione</h3>
+                    <p class="feature-description">
+                        XP, livelli, achievement. Perché il cervello ADHD risponde meglio 
+                        alla dopamina immediata che alle ricompense lontane.
+                    </p>
+                </div>
+                
+                <!-- Voice Input -->
+                <div class="feature-card animate-on-scroll stagger-4">
+                    <div class="feature-icon">🎤</div>
+                    <h3 class="feature-title">Voice Input</h3>
+                    <p class="feature-description">
+                        Cattura i pensieri quando arrivano, parlando. 
+                        Perché quando l'idea c'è, scriverla può farla svanire.
+                    </p>
+                </div>
+                
+                <!-- Routine System -->
+                <div class="feature-card animate-on-scroll stagger-5">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Sistema Routine</h3>
+                    <p class="feature-description">
+                        Task ricorrenti che si adattano ai tuoi ritmi reali, 
+                        non a quelli che "dovresti" avere.
+                    </p>
+                </div>
+                
+                <!-- Backup -->
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">💾</div>
+                    <h3 class="feature-title">Backup Automatici</h3>
+                    <p class="feature-description">
+                        I tuoi dati sono sempre al sicuro, localmente. 
+                        Zero rischio di perdere tutto per un crash.
+                    </p>
+                </div>
+                
+                <!-- Tutorial -->
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">📚</div>
+                    <h3 class="feature-title">Tutorial Interattivo</h3>
+                    <p class="feature-description">
+                        Onboarding che non ti sommerge. 
+                        Impari mentre usi, un passo alla volta.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Pattern Detection Works -->
+    <section class="section section-dark" id="pattern-detection">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">Come Funziona</span>
+                <h2 class="section-title animate-on-scroll stagger-1">L'IA come specchio, non come giudice</h2>
+            </div>
+            
+            <div class="vision-content">
+                <div class="vision-text animate-on-scroll stagger-2">
+                    <h3 style="font-size: 1.5rem; margin-bottom: var(--space-sm);">Fase 1: Raccogli dati (senza pensarci)</h3>
+                    <p class="vision-manifesto">
+                        Usi l'app normalmente. Crei task, li completi (o no), scrivi note, 
+                        imposti timer. Non devi fare nulla di speciale.
+                    </p>
+                    
+                    <h3 style="font-size: 1.5rem; margin: var(--space-md) 0 var(--space-sm);">Fase 2: L'AI trova pattern (automatico)</h3>
+                    <p class="vision-manifesto">
+                        Dopo qualche settimana, Tsunami inizia a vedere cose che tu non vedi:
+                        quando lavori meglio, cosa rimandi, quali task ti bloccano.
+                    </p>
+                    
+                    <h3 style="font-size: 1.5rem; margin: var(--space-md) 0 var(--space-sm);">Fase 3: Ti mostra lo specchio</h3>
+                    <p class="vision-manifesto">
+                        Non ti dice "fai così". Ti dice "ecco come funzioni". 
+                        Poi, insieme, potete lavorare con questo, non contro.
+                    </p>
+                </div>
+                
+                <div class="vision-visual animate-on-scroll stagger-3">
+                    <div class="wave-visual">
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Status -->
+    <section class="section" id="stato-sviluppo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">Stato Sviluppo</span>
+                <h2 class="section-title animate-on-scroll stagger-1">Tsunami è quasi pronto</h2>
+            </div>
+            
+            <div class="animate-on-scroll stagger-2" style="max-width: 600px; margin: 0 auto;">
+                <div class="progress-label">
+                    <span>Completamento</span>
+                    <span>82%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 82%;"></div>
+                </div>
+                
+                <div class="principles-grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-md); margin-top: var(--space-lg);">
+                    <div>
+                        <h4 style="color: var(--growth-green); margin-bottom: var(--space-xs);">✓ Completato</h4>
+                        <ul style="color: var(--text-secondary); list-style: none; line-height: 1.8;">
+                            <li>• Task manager base</li>
+                            <li>• Sistema gamificazione</li>
+                            <li>• Backup automatici</li>
+                            <li>• Tutorial interattivo</li>
+                            <li>• Voice input</li>
+                            <li>• Progetti + Routine</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--fire-amber); margin-bottom: var(--space-xs);">◐ In sviluppo</h4>
+                        <ul style="color: var(--text-secondary); list-style: none; line-height: 1.8;">
+                            <li>• OAuth calendario</li>
+                            <li>• Notifiche push</li>
+                            <li>• AI pattern detection</li>
+                            <li>• Testing completo</li>
+                            <li>• Landing page</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy -->
+    <section class="section section-dark" id="privacy">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">Privacy</span>
+                <h2 class="section-title animate-on-scroll stagger-1">I tuoi pattern sono tuoi</h2>
+            </div>
+            
+            <div class="principles-grid">
+                <div class="principle-card animate-on-scroll stagger-2">
+                    <span class="principle-icon">🏠</span>
+                    <h3 class="principle-title">Local-First</h3>
+                    <p class="principle-text">
+                        I dati ADHD sono sensibili. Per questo rimangono 
+                        sul tuo dispositivo, non su server esterni.
+                    </p>
+                </div>
+                
+                <div class="principle-card animate-on-scroll stagger-3">
+                    <span class="principle-icon">🔒</span>
+                    <h3 class="principle-title">Zero Vendita Dati</h3>
+                    <p class="principle-text">
+                        Non vendiamo i tuoi pattern a nessuno. 
+                        Mai. È una promessa, non marketing.
+                    </p>
+                </div>
+                
+                <div class="principle-card animate-on-scroll stagger-4">
+                    <span class="principle-icon">🤝</span>
+                    <h3 class="principle-title">Ricerca Volontaria</h3>
+                    <p class="principle-text">
+                        Se vuoi contribuire alla ricerca ADHD, sei tu a decidere. 
+                        E sei tu a ricevere valore in cambio.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2 class="cta-title animate-on-scroll">Vuoi essere tra i primi tester?</h2>
+            <p class="cta-subtitle animate-on-scroll stagger-1">
+                Tsunami sta per entrare in beta. Unisciti alla lista per accesso anticipato.
+            </p>
+            <div class="hero-cta animate-on-scroll stagger-2">
+                <a href="contatti.html" class="btn btn-primary" style="background: var(--gradient-tsunami);">
+                    Richiedi accesso beta
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="supportaci.html" class="btn btn-secondary">Supporta lo sviluppo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">IAm</span>
+                <p class="footer-tagline">
+                    "Il fuoco rubato agli dei è la nostra storia. 
+                    Riprendiamocela."
+                </p>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">Progetti</h4>
+                <ul class="footer-links">
+                    <li><a href="prometheus.html">Prometheus</a></li>
+                    <li><a href="tsunami.html">Tsunami</a></li>
+                    <li><a href="visione.html">La Visione</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">IAm</h4>
+                <ul class="footer-links">
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="supportaci.html">Supportaci</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">Connettiti</h4>
+                <ul class="footer-links">
+                    <li><a href="https://instagram.com/PrometheusSpecchio" target="_blank">Instagram</a></li>
+                    <li><a href="mailto:info@iam-project.org">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 IAm. Costruito con visione e fuoco.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/PrometheusSpecchio" target="_blank" class="social-link" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

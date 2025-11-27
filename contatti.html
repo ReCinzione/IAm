@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contatta IAm - Per collaborazioni, domande o semplicemente per parlare di sovranità digitale.">
+    <title>Contatti | IAm</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: start;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+        
+        .contact-card {
+            background: var(--void-medium);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            border-color: rgba(255, 107, 53, 0.3);
+        }
+        
+        .contact-card-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            background: var(--gradient-fire);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .contact-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .contact-card p {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .contact-card a {
+            color: var(--fire-orange);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-card a:hover {
+            color: var(--fire-amber);
+        }
+        
+        .contact-form {
+            background: var(--void-medium);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+            color: var(--text-primary);
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: var(--space-sm);
+            background: var(--void-deep);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--fire-orange);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+        
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--text-muted);
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: var(--space-sm);
+            background: var(--void-deep);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .form-select:focus {
+            outline: none;
+            border-color: var(--fire-orange);
+        }
+        
+        .form-select option {
+            background: var(--void-deep);
+            color: var(--text-primary);
+        }
+        
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+        }
+        
+        .social-card {
+            background: var(--void-medium);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            padding: var(--space-sm);
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .social-card:hover {
+            border-color: var(--fire-orange);
+            color: var(--fire-orange);
+            transform: translateY(-4px);
+        }
+        
+        .social-card-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-xs);
+            display: block;
+        }
+        
+        .social-card-name {
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animated"></div>
+    <div class="grain"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">IAm</a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="prometheus.html" class="nav-link">Prometheus</a></li>
+                <li><a href="tsunami.html" class="nav-link">Tsunami</a></li>
+                <li><a href="visione.html" class="nav-link">Visione</a></li>
+                <li><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+                <li><a href="supportaci.html" class="nav-link">Supportaci</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-content">
+            <span class="section-label animate-on-scroll">Parliamo</span>
+            
+            <h1 class="hero-title animate-on-scroll stagger-1">
+                <span class="highlight">Contattaci</span>
+            </h1>
+            
+            <p class="hero-subtitle animate-on-scroll stagger-2">
+                "Per domande, collaborazioni, o semplicemente per parlare di sovranità digitale."
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info animate-on-scroll">
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-icon">📧</div>
+                            <h3>Email</h3>
+                        </div>
+                        <p>Per richieste generali o collaborazioni:</p>
+                        <a href="mailto:info@iam-project.org">info@iam-project.org</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-icon">📍</div>
+                            <h3>Base</h3>
+                        </div>
+                        <p>Torino, Italia</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">
+                            Lavoriamo principalmente da remoto, ma siamo sempre aperti a un caffè.
+                        </p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-icon">⏰</div>
+                            <h3>Tempi di Risposta</h3>
+                        </div>
+                        <p>
+                            Cerchiamo di rispondere entro 48 ore. Se non ricevi risposta, 
+                            probabilmente la mail è finita nello spam — riprova!
+                        </p>
+                    </div>
+                    
+                    <!-- Social -->
+                    <div>
+                        <h3 style="margin-bottom: var(--space-sm);">Seguici</h3>
+                        <div class="social-grid">
+                            <a href="https://instagram.com/PrometheusSpecchio" target="_blank" class="social-card">
+                                <span class="social-card-icon">📸</span>
+                                <span class="social-card-name">Instagram</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form animate-on-scroll stagger-2">
+                    <h3 style="margin-bottom: var(--space-md);">Inviaci un messaggio</h3>
+                    
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" id="name" name="name" class="form-input" 
+                                   placeholder="Come ti chiami?" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" 
+                                   placeholder="la-tua@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Argomento</label>
+                            <select id="subject" name="subject" class="form-select" required>
+                                <option value="">Seleziona un argomento</option>
+                                <option value="prometheus">Prometheus</option>
+                                <option value="tsunami">Tsunami</option>
+                                <option value="partnership">Partnership / Collaborazione</option>
+                                <option value="beta">Accesso Beta</option>
+                                <option value="press">Stampa / Media</option>
+                                <option value="altro">Altro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Messaggio</label>
+                            <textarea id="message" name="message" class="form-textarea" 
+                                      placeholder="Cosa vorresti dirci?" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Invia Messaggio
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                        
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: var(--space-sm); text-align: center;">
+                            Form attualmente non funzionante — usa l'email diretta
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Preview -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">Domande Frequenti</span>
+                <h2 class="section-title animate-on-scroll stagger-1">Prima di scrivere...</h2>
+            </div>
+            
+            <div class="principles-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="principle-card animate-on-scroll stagger-2">
+                    <span class="principle-icon">🚀</span>
+                    <h3 class="principle-title">Quando esce Tsunami?</h3>
+                    <p class="principle-text">
+                        Tsunami è all'82% di completamento. La beta è prevista 
+                        nelle prossime settimane. Seguici per aggiornamenti!
+                    </p>
+                </div>
+                
+                <div class="principle-card animate-on-scroll stagger-3">
+                    <span class="principle-icon">💰</span>
+                    <h3 class="principle-title">Quanto costerà?</h3>
+                    <p class="principle-text">
+                        Freemium. Funzioni base sempre gratuite. 
+                        Pro a prezzo accessibile per chi vuole di più.
+                    </p>
+                </div>
+                
+                <div class="principle-card animate-on-scroll stagger-4">
+                    <span class="principle-icon">🔒</span>
+                    <h3 class="principle-title">I miei dati sono al sicuro?</h3>
+                    <p class="principle-text">
+                        Local-first significa che i dati rimangono sul tuo dispositivo. 
+                        Noi non li vediamo, non li tocchiamo, non esistono per noi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">IAm</span>
+                <p class="footer-tagline">
+                    "Il fuoco rubato agli dei è la nostra storia. 
+                    Riprendiamocela."
+                </p>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">Progetti</h4>
+                <ul class="footer-links">
+                    <li><a href="prometheus.html">Prometheus</a></li>
+                    <li><a href="tsunami.html">Tsunami</a></li>
+                    <li><a href="visione.html">La Visione</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">IAm</h4>
+                <ul class="footer-links">
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="supportaci.html">Supportaci</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">Connettiti</h4>
+                <ul class="footer-links">
+                    <li><a href="https://instagram.com/PrometheusSpecchio" target="_blank">Instagram</a></li>
+                    <li><a href="mailto:info@iam-project.org">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 IAm. Costruito con visione e fuoco.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/PrometheusSpecchio" target="_blank" class="social-link" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

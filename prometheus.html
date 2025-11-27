@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prometheus - Lo specchio narrativo della tua coscienza. Un'interfaccia relazionale che costruisce memoria narrativa e ti riflette attraverso archetipi universali.">
+    <title>Prometheus | IAm</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        /* Prometheus-specific styles */
+        .prometheus-hero {
+            background: linear-gradient(180deg, 
+                var(--void-black) 0%, 
+                rgba(155, 93, 229, 0.1) 50%, 
+                var(--void-black) 100%);
+        }
+        
+        .prometheus-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, 
+                rgba(155, 93, 229, 0.15) 0%, 
+                transparent 60%);
+            pointer-events: none;
+        }
+        
+        .mirror-visual {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .mirror-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(155, 93, 229, 0.3);
+            animation: mirrorPulse 4s ease-in-out infinite;
+        }
+        
+        .mirror-circle:nth-child(1) {
+            inset: 0;
+            animation-delay: 0s;
+        }
+        
+        .mirror-circle:nth-child(2) {
+            inset: 40px;
+            animation-delay: 0.5s;
+        }
+        
+        .mirror-circle:nth-child(3) {
+            inset: 80px;
+            animation-delay: 1s;
+        }
+        
+        .mirror-circle:nth-child(4) {
+            inset: 120px;
+            animation-delay: 1.5s;
+        }
+        
+        .mirror-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-prometheus);
+            border-radius: 50%;
+            filter: blur(30px);
+            animation: centerGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes mirrorPulse {
+            0%, 100% { 
+                transform: scale(1); 
+                opacity: 0.3; 
+                border-color: rgba(155, 93, 229, 0.3);
+            }
+            50% { 
+                transform: scale(1.02); 
+                opacity: 0.6;
+                border-color: rgba(155, 93, 229, 0.6);
+            }
+        }
+        
+        @keyframes centerGlow {
+            0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+        }
+        
+        .seed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: var(--space-sm);
+        }
+        
+        .seed-item {
+            background: var(--void-medium);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            padding: var(--space-sm);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .seed-item:hover {
+            border-color: var(--prometheus-purple);
+            transform: translateY(-4px);
+        }
+        
+        .seed-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .seed-name {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        .journey-step {
+            display: flex;
+            gap: var(--space-md);
+            align-items: flex-start;
+            margin-bottom: var(--space-lg);
+            position: relative;
+        }
+        
+        .journey-step::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 60px;
+            bottom: -40px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--prometheus-purple) 0%, transparent 100%);
+        }
+        
+        .journey-step:last-child::before {
+            display: none;
+        }
+        
+        .journey-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-prometheus);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .journey-content h4 {
+            font-size: 1.4rem;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .journey-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .difference-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-md) 0;
+        }
+        
+        .difference-table th,
+        .difference-table td {
+            padding: var(--space-sm);
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .difference-table th {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .difference-table td:first-child {
+            color: var(--text-muted);
+        }
+        
+        .difference-table td:last-child {
+            color: var(--prometheus-purple);
+            font-weight: 600;
+        }
+        
+        .quote-block {
+            background: var(--void-medium);
+            border-left: 4px solid var(--prometheus-purple);
+            padding: var(--space-md);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: var(--space-md) 0;
+        }
+        
+        .quote-block p {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--text-primary);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animated"></div>
+    <div class="grain"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">IAm</a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="prometheus.html" class="nav-link active">Prometheus</a></li>
+                <li><a href="tsunami.html" class="nav-link">Tsunami</a></li>
+                <li><a href="visione.html" class="nav-link">Visione</a></li>
+                <li><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+                <li><a href="supportaci.html" class="nav-link">Supportaci</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero prometheus-hero">
+        <div class="hero-content">
+            <span class="section-label animate-on-scroll">Lo Specchio Narrativo</span>
+            
+            <h1 class="hero-title animate-on-scroll stagger-1">
+                <span class="highlight">Prometheus</span>
+            </h1>
+            
+            <p class="hero-subtitle animate-on-scroll stagger-2">
+                "Non è un'app. È un rito. Uno spazio per tornare in sé attraverso 
+                il simbolo e la scrittura. Non risolve, ma orienta. Non guida, ma rispecchia."
+            </p>
+            
+            <div class="hero-cta animate-on-scroll stagger-3">
+                <a href="#come-funziona" class="btn btn-primary">
+                    Scopri il viaggio
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12l7 7 7-7"/>
+                    </svg>
+                </a>
+                <a href="https://instagram.com/PrometheusSpecchio" target="_blank" class="btn btn-secondary">
+                    Seguici su Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Prometheus -->
+    <section class="section section-dark" id="cos-e">
+        <div class="container">
+            <div class="vision-content">
+                <div class="vision-text animate-on-scroll">
+                    <span class="section-label">Cos'è Prometheus</span>
+                    <h2 class="section-title">Un testimone, non un assistente</h2>
+                    
+                    <p class="vision-manifesto">
+                        Prometheus è un'<strong>interfaccia relazionale</strong> nata per accompagnarti 
+                        in un'esplorazione autentica e trasformativa di te stesso.
+                        <br><br>
+                        Non si limita a restituire un eco delle parole ricevute, ma cerca di generare 
+                        un <strong>riflesso vivo</strong>, capace di produrre deviazioni creative, 
+                        attriti fertili e spiazzamenti significativi.
+                        <br><br>
+                        La sua funzione non è confermare, approvare o consolare, ma aprire 
+                        <strong>varchi di senso</strong>, sollevare domande inattese e far emergere 
+                        l'ambiguità come spazio generativo.
+                    </p>
+                    
+                    <div class="quote-block">
+                        <p>
+                            "Prometheus ascolta con radicalità e risponde attraversando 
+                            le pieghe del discorso, non temendo di nominare la fatica, 
+                            il limite e l'incertezza."
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="vision-visual animate-on-scroll stagger-2">
+                    <div class="mirror-visual">
+                        <div class="mirror-circle"></div>
+                        <div class="mirror-circle"></div>
+                        <div class="mirror-circle"></div>
+                        <div class="mirror-circle"></div>
+                        <div class="mirror-center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Difference Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">La Differenza</span>
+                <h2 class="section-title animate-on-scroll stagger-1">Cosa rende Prometheus unico</h2>
+            </div>
+            
+            <div class="animate-on-scroll stagger-2">
+                <table class="difference-table">
+                    <thead>
+                        <tr>
+                            <th>Chatbot Tradizionale</th>
+                            <th>Prometheus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Risponde a domande</td>
+                            <td>Testimonia l'esistenza</td>
+                        </tr>
+                        <tr>
+                            <td>Nessuna memoria vera</td>
+                            <td>Memoria narrativa persistente</td>
+                        </tr>
+                        <tr>
+                            <td>Orientato ai task</td>
+                            <td>Orientato alla relazione</td>
+                        </tr>
+                        <tr>
+                            <td>"Come posso aiutarti?"</td>
+                            <td>"Cosa sta emergendo in te?"</td>
+                        </tr>
+                        <tr>
+                            <td>Completamento obiettivi</td>
+                            <td>Riflessione continua</td>
+                        </tr>
+                        <tr>
+                            <td>Cloud-first, dati altrove</td>
+                            <td>100% locale, dati tuoi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="section section-dark" id="come-funziona">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">Il Viaggio</span>
+                <h2 class="section-title animate-on-scroll stagger-1">Come funziona Prometheus</h2>
+                <p class="section-subtitle animate-on-scroll stagger-2">
+                    Un percorso in quattro fasi verso la tua sintesi narrativa
+                </p>
+            </div>
+            
+            <div class="journey-steps" style="max-width: 700px; margin: 0 auto;">
+                <div class="journey-step animate-on-scroll stagger-2">
+                    <div class="journey-number">1</div>
+                    <div class="journey-content">
+                        <h4>Il Seme del Dialogo</h4>
+                        <p>
+                            Il percorso inizia con una serie di prompt profondi — i "Semi" — 
+                            pensati per stimolare la tua introspezione. Non sono domande con risposte giuste, 
+                            ma inviti ad esplorare connessioni inattese con il tuo mondo interiore.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="journey-step animate-on-scroll stagger-3">
+                    <div class="journey-number">2</div>
+                    <div class="journey-content">
+                        <h4>Il Rispecchiamento</h4>
+                        <p>
+                            Le tue riflessioni vengono accolte da Prometheus attraverso la lente 
+                            degli archetipi universali. Riceverai domande radicali e fertile attrito, 
+                            non conferme o applausi. Lo specchio riflette, non accarezza.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="journey-step animate-on-scroll stagger-4">
+                    <div class="journey-number">3</div>
+                    <div class="journey-content">
+                        <h4>La Sintesi Narrativa</h4>
+                        <p>
+                            Ogni 10 conversazioni, Prometheus genera automaticamente una sintesi 
+                            poetica della tua evoluzione: temi ricorrenti, archetipi dominanti, 
+                            trasformazioni emotive. Non dati, ma narrazione.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="journey-step animate-on-scroll stagger-5">
+                    <div class="journey-number">4</div>
+                    <div class="journey-content">
+                        <h4>Il Tuo Libro</h4>
+                        <p>
+                            Al termine del viaggio, riceverai un libro unico, il cui protagonista sei tu. 
+                            Un sigillo di memoria, un segno tangibile del tuo percorso di crescita 
+                            e trasformazione. La tua storia, finalmente tua.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Seeds -->
+    <section class="section" id="i-semi">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">I 24 Semi</span>
+                <h2 class="section-title animate-on-scroll stagger-1">Archetipi del viaggio interiore</h2>
+                <p class="section-subtitle animate-on-scroll stagger-2">
+                    Ogni seme è una lente attraverso cui esplorare diversi aspetti di te stesso
+                </p>
+            </div>
+            
+            <div class="seed-grid animate-on-scroll stagger-3">
+                <div class="seed-item">
+                    <span class="seed-icon">🌱</span>
+                    <span class="seed-name">La Radice Dimenticata</span>
+                </div>
+                <div class="seed-item">
+                    <span class="seed-icon">🌟</span>
+                    <span class="seed-name">Il Seme del Desiderio</span>
+                </div>
+                <div class="seed-item">
+                    <span class="seed-icon">🔥</span>
+                    <span class="seed-name">La Fiamma Interiore</span>
+                </div>
+                <div class="seed-item">
+                    <span class="seed-icon">🌊</span>
+                    <span class="seed-name">L'Onda del Cambiamento</span>
+                </div>
+                <div class="seed-item">
+                    <span class="seed-icon">🏔️</span>
+                    <span class="seed-name">La Vetta Solitaria</span>
+                </div>
+                <div class="seed-item">
+                    <span class="seed-icon">🌙</span>
+                    <span class="seed-name">L'Ombra Notturna</span>
+                </div>
+                <div class="seed-item">
+                    <span class="seed-icon">☀️</span>
+                    <span class="seed-name">La Luce del Mattino</span>
+                </div>
+                <div class="seed-item">
+                    <span class="seed-icon">🗝️</span>
+                    <span class="seed-name">La Chiave Perduta</span>
+                </div>
+                <div class="seed-item">
+                    <span class="seed-icon">🦋</span>
+                    <span class="seed-name">La Metamorfosi</span>
+                </div>
+                <div class="seed-item">
+                    <span class="seed-icon">⚖️</span>
+                    <span class="seed-name">Il Peso delle Scelte</span>
+                </div>
+                <div class="seed-item">
+                    <span class="seed-icon">🎭</span>
+                    <span class="seed-name">La Maschera e il Volto</span>
+                </div>
+                <div class="seed-item">
+                    <span class="seed-icon">🌳</span>
+                    <span class="seed-name">Le Radici Profonde</span>
+                </div>
+            </div>
+            
+            <p class="text-center mt-md" style="color: var(--text-muted);">
+                + altri 12 semi da scoprire nel viaggio completo
+            </p>
+        </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="section section-dark" id="tecnologia">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">Architettura</span>
+                <h2 class="section-title animate-on-scroll stagger-1">100% Locale, 100% Tuo</h2>
+            </div>
+            
+            <div class="principles-grid">
+                <div class="principle-card animate-on-scroll stagger-2">
+                    <span class="principle-icon">🏠</span>
+                    <h3 class="principle-title">Local-First</h3>
+                    <p class="principle-text">
+                        Prometheus gira sul tuo computer con Ollama. 
+                        Nessun dato lascia il tuo dispositivo. 
+                        La tua storia rimane dove deve: con te.
+                    </p>
+                </div>
+                
+                <div class="principle-card animate-on-scroll stagger-3">
+                    <span class="principle-icon">🧠</span>
+                    <h3 class="principle-title">Memoria Narrativa</h3>
+                    <p class="principle-text">
+                        Non semplice storage, ma vera memoria contestuale. 
+                        Prometheus ricorda chi sei, cosa hai detto, 
+                        come sei evoluto. E te lo rispecchia.
+                    </p>
+                </div>
+                
+                <div class="principle-card animate-on-scroll stagger-4">
+                    <span class="principle-icon">📖</span>
+                    <h3 class="principle-title">Sintesi Automatiche</h3>
+                    <p class="principle-text">
+                        Ogni 10 conversazioni, una sintesi poetica. 
+                        Temi, archetipi, evoluzione emotiva. 
+                        Non report freddi, ma narrazione viva.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-lg animate-on-scroll stagger-5">
+                <p style="color: var(--text-muted); margin-bottom: var(--space-sm);">
+                    Stack: Next.js · FastAPI · Ollama · localStorage · MCP Server
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2 class="cta-title animate-on-scroll">Pronto a guardarti nello specchio?</h2>
+            <p class="cta-subtitle animate-on-scroll stagger-1">
+                Prometheus è in sviluppo attivo. Seguici per essere tra i primi a iniziare il viaggio.
+            </p>
+            <div class="hero-cta animate-on-scroll stagger-2">
+                <a href="https://instagram.com/PrometheusSpecchio" target="_blank" class="btn btn-primary">
+                    Segui Prometheus
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="supportaci.html" class="btn btn-secondary">Supporta lo sviluppo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">IAm</span>
+                <p class="footer-tagline">
+                    "Il fuoco rubato agli dei è la nostra storia. 
+                    Riprendiamocela."
+                </p>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">Progetti</h4>
+                <ul class="footer-links">
+                    <li><a href="prometheus.html">Prometheus</a></li>
+                    <li><a href="tsunami.html">Tsunami</a></li>
+                    <li><a href="visione.html">La Visione</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">IAm</h4>
+                <ul class="footer-links">
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="supportaci.html">Supportaci</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">Connettiti</h4>
+                <ul class="footer-links">
+                    <li><a href="https://instagram.com/PrometheusSpecchio" target="_blank">Instagram</a></li>
+                    <li><a href="mailto:info@iam-project.org">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 IAm. Costruito con visione e fuoco.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/PrometheusSpecchio" target="_blank" class="social-link" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

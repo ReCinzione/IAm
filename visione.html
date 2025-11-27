@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La visione di IAm: sovranità digitale attraverso l'Intelligenza Artificiale. Il fuoco rubato agli dei è la tua storia.">
+    <title>La Visione | IAm</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .manifesto-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .manifesto-block {
+            margin-bottom: var(--space-xl);
+        }
+        
+        .manifesto-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: var(--space-md);
+            position: relative;
+            padding-left: var(--space-md);
+        }
+        
+        .manifesto-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gradient-fire);
+            border-radius: var(--radius-full);
+        }
+        
+        .manifesto-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+        }
+        
+        .manifesto-text strong {
+            color: var(--text-primary);
+        }
+        
+        .manifesto-highlight {
+            background: var(--void-medium);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            border-left: 4px solid var(--fire-orange);
+        }
+        
+        .manifesto-highlight p {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-primary);
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .manifesto-list {
+            list-style: none;
+            margin: var(--space-md) 0;
+        }
+        
+        .manifesto-list li {
+            padding: var(--space-sm) 0;
+            padding-left: var(--space-md);
+            position: relative;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .manifesto-list li::before {
+            content: '🔥';
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: var(--space-lg);
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--fire-orange) 0%, var(--prometheus-purple) 50%, var(--tsunami-blue) 100%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: calc(-1 * var(--space-lg) - 6px);
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            background: var(--fire-orange);
+            border-radius: 50%;
+            border: 3px solid var(--void-black);
+        }
+        
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .timeline-text {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animated"></div>
+    <div class="grain"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">IAm</a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="prometheus.html" class="nav-link">Prometheus</a></li>
+                <li><a href="tsunami.html" class="nav-link">Tsunami</a></li>
+                <li><a href="visione.html" class="nav-link active">Visione</a></li>
+                <li><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+                <li><a href="supportaci.html" class="nav-link">Supportaci</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="section-label animate-on-scroll">Manifesto</span>
+            
+            <h1 class="hero-title animate-on-scroll stagger-1">
+                La <span class="highlight">Visione</span> di IAm
+            </h1>
+            
+            <p class="hero-subtitle animate-on-scroll stagger-2">
+                "Il fuoco rubato agli dei non è la tecnologia. 
+                È il controllo sulla propria narrativa."
+            </p>
+        </div>
+    </section>
+
+    <!-- Manifesto Content -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="manifesto-section">
+                
+                <!-- Block 1 -->
+                <div class="manifesto-block animate-on-scroll">
+                    <h2 class="manifesto-title">Il Principio Fondamentale</h2>
+                    <p class="manifesto-text">
+                        Lo sviluppo avviene. È inevitabile. Non è una scelta, non è un'opinione: 
+                        è la legge fondamentale dell'esistenza. La necessità e la capacità 
+                        di adattarsi ai mutamenti fanno parte della natura, degli esseri umani e della società.
+                    </p>
+                </div>
+                
+                <!-- Block 2 -->
+                <div class="manifesto-block animate-on-scroll">
+                    <h2 class="manifesto-title">Il Fallimento della Resistenza</h2>
+                    <p class="manifesto-text">
+                        Non è possibile opporsi allo sviluppo per un lungo periodo. Quando si tenta di farlo, 
+                        le contraddizioni e le problematiche dei sistemi dominanti vengono esasperate, 
+                        fino a crollare o a mutare drasticamente la realtà, spesso facendola regredire.
+                        <br><br>
+                        <strong>La storia ci insegna che chi resiste al cambiamento non lo ferma: 
+                        semplicemente si condanna a subirlo invece di guidarlo.</strong>
+                    </p>
+                </div>
+                
+                <!-- Highlight -->
+                <div class="manifesto-highlight animate-on-scroll">
+                    <p>
+                        "L'Intelligenza Artificiale è il più grande salto evolutivo della nostra epoca. 
+                        Non è una minaccia da temere, ma una forza da comprendere e dirigere. 
+                        Come il fuoco per i nostri antenati, come l'elettricità per le generazioni passate, 
+                        l'IA è lo strumento che può liberarci o asservirci — dipende da come scegliamo di usarla."
+                    </p>
+                </div>
+                
+                <!-- Block 3 -->
+                <div class="manifesto-block animate-on-scroll">
+                    <h2 class="manifesto-title">Il Fuoco Rubato agli Dei</h2>
+                    <p class="manifesto-text">
+                        I dati che produci ogni giorno — ogni click, ogni task completato, ogni emozione condivisa — 
+                        sono tra le risorse più preziose del nostro tempo. Eppure li regali, e non li usi mai per te stesso.
+                        <br><br>
+                        Le Big Tech usano i tuoi dati per schedarti, analizzarti e venderti cose. 
+                        <strong>Mentre tu, che hai accesso agli stessi dati, non li valorizzi per raccontare la tua storia.</strong>
+                        <br><br>
+                        Il vero fuoco rubato agli dei non è la tecnologia in sé. 
+                        È la <strong>sovranità sulla propria narrativa</strong>.
+                    </p>
+                </div>
+                
+                <!-- Block 4 -->
+                <div class="manifesto-block animate-on-scroll">
+                    <h2 class="manifesto-title">La Nostra Visione: Tecnologia per l'Umano</h2>
+                    <p class="manifesto-text">
+                        IAm nasce da una convinzione profonda: rendere l'IA accessibile a tutti non è solo giusto, 
+                        è essenziale per valorizzare il potenziale umano in tutte le sue forme.
+                    </p>
+                    <ul class="manifesto-list">
+                        <li><strong>Non crediamo nell'IA che sostituisce l'uomo</strong>, ma nell'IA che lo completa.</li>
+                        <li><strong>Non nell'automazione che elimina il lavoro</strong>, ma nella tecnologia che libera dalla fatica per dedicarsi alla crescita.</li>
+                        <li><strong>Non nell'efficienza che disumanizza</strong>, ma negli strumenti che aiutano a riscoprire chi siamo veramente.</li>
+                    </ul>
+                </div>
+                
+                <!-- Block 5 -->
+                <div class="manifesto-block animate-on-scroll">
+                    <h2 class="manifesto-title">Il Paradosso del Capitalismo</h2>
+                    <p class="manifesto-text">
+                        Il capitalismo ha creato contraddizioni: esalta l'individualismo ma ha generato 
+                        una globalizzazione e un'interconnessione senza precedenti. Ha promosso la competizione 
+                        ma ha creato dipendenze sistemiche. Ha celebrato l'efficienza ma ha prodotto alienazione.
+                        <br><br>
+                        <strong>L'IA può essere il catalizzatore per superare questo paradosso.</strong>
+                        <br><br>
+                        Può permetterci di appropriarci degli strumenti della globalizzazione per costruire un futuro 
+                        dove "meno lavoro" diventa liberazione, non crisi. Dove la tecnologia serve la crescita umana, 
+                        non il profitto cieco.
+                    </p>
+                </div>
+                
+                <!-- Block 6 -->
+                <div class="manifesto-block animate-on-scroll">
+                    <h2 class="manifesto-title">La Rivoluzione Silenziosa</h2>
+                    <p class="manifesto-text">
+                        Stiamo vivendo una rivoluzione silenziosa. Mentre molti dibattono se l'IA ci ruberà il lavoro, 
+                        noi crediamo che ci restituirà il tempo per essere umani. 
+                        Mentre altri temono la standardizzazione, noi vediamo l'opportunità di celebrare la diversità.
+                        <br><br>
+                        <strong>Il futuro non sarà determinato da chi possiede la tecnologia più avanzata, 
+                        ma da chi sa usarla per amplificare la bellezza e la complessità dell'esperienza umana.</strong>
+                    </p>
+                </div>
+                
+                <!-- Block 7 - Our Commitment -->
+                <div class="manifesto-block animate-on-scroll">
+                    <h2 class="manifesto-title">Il Nostro Impegno</h2>
+                    <p class="manifesto-text">IAm è la nostra risposta concreta a questa visione:</p>
+                    <ul class="manifesto-list">
+                        <li><strong>Democratizziamo l'accesso:</strong> Ogni persona, indipendentemente dal background, deve poter beneficiare degli strumenti del futuro</li>
+                        <li><strong>Celebriamo la diversità:</strong> Dalla neurodivergenza alla diversità culturale, ogni modo di essere umano è un valore da proteggere e potenziare</li>
+                        <li><strong>Riduciamo lo spreco:</strong> Rigenerare hardware, riutilizzare risorse, rispettare il pianeta</li>
+                        <li><strong>Promuoviamo la crescita:</strong> Non solo competenze tecniche, ma consapevolezza, introspezione, evoluzione personale</li>
+                    </ul>
+                </div>
+                
+                <!-- Final Highlight -->
+                <div class="manifesto-highlight animate-on-scroll">
+                    <p>
+                        "Il futuro non è qualcosa che ci accade. È qualcosa che creiamo. 
+                        Possiamo scegliere un futuro dove l'IA amplifica le disuguaglianze, 
+                        oppure un futuro dove democratizza le opportunità. 
+                        IAm sceglie il secondo."
+                    </p>
+                </div>
+                
+                <!-- Call to Action -->
+                <div class="manifesto-block animate-on-scroll">
+                    <h2 class="manifesto-title">La Chiamata all'Azione</h2>
+                    <p class="manifesto-text">
+                        IAm è più di un'impresa sociale. È un movimento.
+                        <br><br>
+                        Un movimento per chi crede che la tecnologia debba servire l'umanità, non il contrario. 
+                        Per chi vuole cercare opportunità nel cambiamento, non una minaccia. 
+                        Per chi sa che il futuro migliore è quello che costruiamo insieme.
+                        <br><br>
+                        <strong>Il cambiamento è inevitabile. Ma la direzione del cambiamento è una scelta.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2 class="cta-title animate-on-scroll">Scegli.</h2>
+            <p class="cta-subtitle animate-on-scroll stagger-1">
+                "Il futuro appartiene a coloro che credono nella bellezza dei propri sogni, 
+                ma soprattutto a coloro che hanno il coraggio di realizzarli."
+            </p>
+            <div class="hero-cta animate-on-scroll stagger-2">
+                <a href="supportaci.html" class="btn btn-primary">Unisciti a noi</a>
+                <a href="prometheus.html" class="btn btn-secondary">Scopri i progetti</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">IAm</span>
+                <p class="footer-tagline">
+                    "Il fuoco rubato agli dei è la nostra storia. 
+                    Riprendiamocela."
+                </p>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">Progetti</h4>
+                <ul class="footer-links">
+                    <li><a href="prometheus.html">Prometheus</a></li>
+                    <li><a href="tsunami.html">Tsunami</a></li>
+                    <li><a href="visione.html">La Visione</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">IAm</h4>
+                <ul class="footer-links">
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="supportaci.html">Supportaci</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">Connettiti</h4>
+                <ul class="footer-links">
+                    <li><a href="https://instagram.com/PrometheusSpecchio" target="_blank">Instagram</a></li>
+                    <li><a href="mailto:info@iam-project.org">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 IAm. Costruito con visione e fuoco.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/PrometheusSpecchio" target="_blank" class="social-link" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

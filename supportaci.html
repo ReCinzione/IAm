@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Supporta IAm - Contribuisci allo sviluppo di Prometheus e Tsunami. Ogni contributo ci avvicina alla sovranità digitale per tutti.">
+    <title>Supportaci | IAm</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-md);
+        }
+        
+        .support-card {
+            background: var(--void-medium);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            text-align: center;
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .support-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-fire);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .support-card:hover {
+            border-color: rgba(255, 107, 53, 0.3);
+            transform: translateY(-8px);
+        }
+        
+        .support-card:hover::before {
+            opacity: 1;
+        }
+        
+        .support-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--gradient-fire);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto var(--space-md);
+        }
+        
+        .support-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .support-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-md);
+        }
+        
+        .impact-list {
+            text-align: left;
+            list-style: none;
+            margin: var(--space-md) 0;
+        }
+        
+        .impact-list li {
+            padding: var(--space-xs) 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-xs);
+        }
+        
+        .impact-list li::before {
+            content: '✓';
+            color: var(--growth-green);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .transparency-block {
+            background: var(--void-medium);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            border-left: 4px solid var(--growth-green);
+        }
+        
+        .transparency-title {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .transparency-text {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .allocation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+        
+        .allocation-item {
+            text-align: center;
+        }
+        
+        .allocation-percent {
+            font-family: var(--font-mono);
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient-fire);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .allocation-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animated"></div>
+    <div class="grain"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">IAm</a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="prometheus.html" class="nav-link">Prometheus</a></li>
+                <li><a href="tsunami.html" class="nav-link">Tsunami</a></li>
+                <li><a href="visione.html" class="nav-link">Visione</a></li>
+                <li><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+                <li><a href="supportaci.html" class="nav-link active">Supportaci</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="section-label animate-on-scroll">Costruiamo Insieme</span>
+            
+            <h1 class="hero-title animate-on-scroll stagger-1">
+                <span class="highlight">Supporta</span> il fuoco
+            </h1>
+            
+            <p class="hero-subtitle animate-on-scroll stagger-2">
+                "Ogni contributo ci avvicina all'obiettivo di liberare 
+                il potenziale umano attraverso l'Intelligenza Artificiale consapevole."
+            </p>
+        </div>
+    </section>
+
+    <!-- Why Support -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">Perché Supportarci</span>
+                <h2 class="section-title animate-on-scroll stagger-1">Il tuo contributo fa la differenza</h2>
+            </div>
+            
+            <div class="vision-content">
+                <div class="vision-text animate-on-scroll stagger-2">
+                    <p class="vision-manifesto">
+                        IAm è un progetto indipendente. Non abbiamo venture capital dietro, 
+                        non abbiamo investitori che ci dicono cosa costruire.
+                        <br><br>
+                        Questo significa libertà totale nella visione, ma anche che 
+                        <strong>ogni risorsa conta</strong>.
+                        <br><br>
+                        Il tuo supporto ci permette di:
+                    </p>
+                    
+                    <ul class="impact-list">
+                        <li>Sviluppare e mantenere Prometheus e Tsunami</li>
+                        <li>Mantenere tutto 100% locale e privacy-first</li>
+                        <li>Non vendere mai i dati degli utenti</li>
+                        <li>Offrire accesso gratuito a chi non può permetterselo</li>
+                        <li>Continuare a costruire strumenti che servono le persone, non il profitto</li>
+                    </ul>
+                </div>
+                
+                <div class="vision-visual animate-on-scroll stagger-3">
+                    <div class="fire-visual">
+                        <div class="fire-ring"></div>
+                        <div class="fire-ring"></div>
+                        <div class="fire-ring"></div>
+                        <div class="fire-center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Options -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">Come Supportarci</span>
+                <h2 class="section-title animate-on-scroll stagger-1">Scegli come contribuire</h2>
+            </div>
+            
+            <div class="support-grid">
+                <!-- Direct Donation -->
+                <div class="support-card animate-on-scroll stagger-2">
+                    <div class="support-icon">💝</div>
+                    <h3 class="support-title">Donazione Diretta</h3>
+                    <p class="support-description">
+                        Ogni singola donazione ci aiuta a coprire i costi operativi 
+                        e a finanziare direttamente lo sviluppo.
+                    </p>
+                    <a href="#" class="btn btn-primary" style="width: 100%;">
+                        Dona Ora
+                    </a>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: var(--space-sm);">
+                        Prossimamente attivo
+                    </p>
+                </div>
+                
+                <!-- Beta Testing -->
+                <div class="support-card animate-on-scroll stagger-3">
+                    <div class="support-icon">🧪</div>
+                    <h3 class="support-title">Diventa Beta Tester</h3>
+                    <p class="support-description">
+                        Non hai risorse economiche? Il tuo tempo e feedback sono altrettanto preziosi. 
+                        Aiutaci a testare e migliorare i prodotti.
+                    </p>
+                    <a href="contatti.html" class="btn btn-secondary" style="width: 100%;">
+                        Candidati
+                    </a>
+                </div>
+                
+                <!-- Spread the Word -->
+                <div class="support-card animate-on-scroll stagger-4">
+                    <div class="support-icon">📢</div>
+                    <h3 class="support-title">Diffondi la Visione</h3>
+                    <p class="support-description">
+                        Parla di IAm. Condividi sui social. Ogni persona che conosce 
+                        il progetto è un potenziale alleato.
+                    </p>
+                    <a href="https://instagram.com/PrometheusSpecchio" target="_blank" class="btn btn-secondary" style="width: 100%;">
+                        Seguici
+                    </a>
+                </div>
+                
+                <!-- Partnership -->
+                <div class="support-card animate-on-scroll stagger-5">
+                    <div class="support-icon">🤝</div>
+                    <h3 class="support-title">Partnership</h3>
+                    <p class="support-description">
+                        Sei un'azienda, un'associazione o un ente? Collaboriamo su progetti 
+                        a impatto sociale e innovazione.
+                    </p>
+                    <a href="contatti.html" class="btn btn-secondary" style="width: 100%;">
+                        Parliamone
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparency -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">Trasparenza</span>
+                <h2 class="section-title animate-on-scroll stagger-1">Dove vanno i fondi</h2>
+            </div>
+            
+            <div class="transparency-block animate-on-scroll stagger-2" style="max-width: 800px; margin: 0 auto;">
+                <div class="transparency-title">
+                    <span>🔍</span> Massima trasparenza
+                </div>
+                <p class="transparency-text">
+                    IAm si impegna alla massima trasparenza nella gestione dei fondi ricevuti. 
+                    Ogni risorsa viene impiegata per sostenere direttamente i nostri progetti, 
+                    garantendo che il tuo contributo generi un impatto reale e misurabile.
+                </p>
+                
+                <div class="allocation-grid">
+                    <div class="allocation-item">
+                        <div class="allocation-percent">60%</div>
+                        <div class="allocation-label">Sviluppo Software</div>
+                    </div>
+                    <div class="allocation-item">
+                        <div class="allocation-percent">20%</div>
+                        <div class="allocation-label">Infrastruttura</div>
+                    </div>
+                    <div class="allocation-item">
+                        <div class="allocation-percent">15%</div>
+                        <div class="allocation-label">Community & Outreach</div>
+                    </div>
+                    <div class="allocation-item">
+                        <div class="allocation-percent">5%</div>
+                        <div class="allocation-label">Operatività</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promise -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">La Nostra Promessa</span>
+                <h2 class="section-title animate-on-scroll stagger-1">Cosa non faremo mai</h2>
+            </div>
+            
+            <div class="principles-grid">
+                <div class="principle-card animate-on-scroll stagger-2">
+                    <span class="principle-icon">🚫</span>
+                    <h3 class="principle-title">Vendere i tuoi dati</h3>
+                    <p class="principle-text">
+                        Mai. Non importa quanto cresceremo o quanti soldi offrirà qualcuno. 
+                        I tuoi dati sono tuoi. Punto.
+                    </p>
+                </div>
+                
+                <div class="principle-card animate-on-scroll stagger-3">
+                    <span class="principle-icon">🚫</span>
+                    <h3 class="principle-title">Compromettere la privacy</h3>
+                    <p class="principle-text">
+                        Local-first non è marketing. È una promessa architetturale. 
+                        I dati rimangono sul tuo dispositivo.
+                    </p>
+                </div>
+                
+                <div class="principle-card animate-on-scroll stagger-4">
+                    <span class="principle-icon">🚫</span>
+                    <h3 class="principle-title">Dimenticare la missione</h3>
+                    <p class="principle-text">
+                        IAm esiste per liberare potenziale umano, non per fare soldi. 
+                        Se perdiamo di vista questo, abbiamo fallito.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2 class="cta-title animate-on-scroll">Il fuoco ha bisogno di legna</h2>
+            <p class="cta-subtitle animate-on-scroll stagger-1">
+                Ogni contributo, grande o piccolo, alimenta la fiamma della sovranità digitale.
+            </p>
+            <div class="hero-cta animate-on-scroll stagger-2">
+                <a href="#" class="btn btn-primary">Dona Ora</a>
+                <a href="contatti.html" class="btn btn-secondary">Altre domande?</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">IAm</span>
+                <p class="footer-tagline">
+                    "Il fuoco rubato agli dei è la nostra storia. 
+                    Riprendiamocela."
+                </p>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">Progetti</h4>
+                <ul class="footer-links">
+                    <li><a href="prometheus.html">Prometheus</a></li>
+                    <li><a href="tsunami.html">Tsunami</a></li>
+                    <li><a href="visione.html">La Visione</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">IAm</h4>
+                <ul class="footer-links">
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="supportaci.html">Supportaci</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">Connettiti</h4>
+                <ul class="footer-links">
+                    <li><a href="https://instagram.com/PrometheusSpecchio" target="_blank">Instagram</a></li>
+                    <li><a href="mailto:info@iam-project.org">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 IAm. Costruito con visione e fuoco.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/PrometheusSpecchio" target="_blank" class="social-link" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

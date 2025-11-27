@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chi siamo: il team dietro IAm, Prometheus e Tsunami. Costruttori, non utenti.">
+    <title>Chi Siamo | IAm</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .team-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .team-member {
+            background: var(--void-medium);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            transition: all 0.4s var(--ease-out-expo);
+        }
+        
+        .team-member:hover {
+            border-color: rgba(255, 107, 53, 0.3);
+            transform: translateY(-8px);
+        }
+        
+        .member-header {
+            display: flex;
+            gap: var(--space-md);
+            align-items: flex-start;
+            margin-bottom: var(--space-md);
+        }
+        
+        .member-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--gradient-fire);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+        
+        .member-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+        }
+        
+        .member-role {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--fire-orange);
+        }
+        
+        .member-bio {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-md);
+        }
+        
+        .member-focus {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+        }
+        
+        .focus-tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: var(--void-light);
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+        }
+        
+        .story-timeline {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .story-block {
+            margin-bottom: var(--space-lg);
+            padding-left: var(--space-lg);
+            position: relative;
+        }
+        
+        .story-block::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: var(--fire-orange);
+            border-radius: 50%;
+        }
+        
+        .story-block::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 24px;
+            bottom: -24px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--fire-orange) 0%, transparent 100%);
+        }
+        
+        .story-block:last-child::after {
+            display: none;
+        }
+        
+        .story-date {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--fire-orange);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .story-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .story-text {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-md);
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: var(--space-md);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .value-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .value-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animated"></div>
+    <div class="grain"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">IAm</a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="prometheus.html" class="nav-link">Prometheus</a></li>
+                <li><a href="tsunami.html" class="nav-link">Tsunami</a></li>
+                <li><a href="visione.html" class="nav-link">Visione</a></li>
+                <li><a href="chi-siamo.html" class="nav-link active">Chi Siamo</a></li>
+                <li><a href="supportaci.html" class="nav-link">Supportaci</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="section-label animate-on-scroll">Il Team</span>
+            
+            <h1 class="hero-title animate-on-scroll stagger-1">
+                <span class="highlight">Costruttori</span>, non utenti
+            </h1>
+            
+            <p class="hero-subtitle animate-on-scroll stagger-2">
+                "Non cerchiamo aiuto, cerchiamo alleati. 
+                Incerti alleati, ma alleati."
+            </p>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">Chi Siamo</span>
+                <h2 class="section-title animate-on-scroll stagger-1">Il team dietro IAm</h2>
+            </div>
+            
+            <div class="team-section">
+                <!-- Francesco -->
+                <div class="team-member animate-on-scroll stagger-2">
+                    <div class="member-header">
+                        <div class="member-avatar">👨‍💻</div>
+                        <div class="member-info">
+                            <h3>Francesco</h3>
+                            <span class="member-role">Co-fondatore & Sviluppo AI</span>
+                        </div>
+                    </div>
+                    <p class="member-bio">
+                        36 anni, Torino. Dopo 12 anni nel supporto software retail, nell'agosto 2025 
+                        ha scelto di costruire gli strumenti che avrebbe voluto avere.
+                        <br><br>
+                        Prometheus nasce come specchio personale — un modo per esplorare la propria 
+                        coscienza attraverso archetipi e narrazione. Tsunami nasce dalla necessità 
+                        di gestire una mente ADHD senza combatterla.
+                        <br><br>
+                        <em>"Il fuoco rubato agli dei è la nostra storia. Le Big Tech la usano per venderci cose. 
+                        Noi la usiamo per capirci."</em>
+                    </p>
+                    <div class="member-focus">
+                        <span class="focus-tag">Python</span>
+                        <span class="focus-tag">React</span>
+                        <span class="focus-tag">Ollama</span>
+                        <span class="focus-tag">Local-First</span>
+                        <span class="focus-tag">Architetture AI</span>
+                    </div>
+                </div>
+                
+                <!-- Marco -->
+                <div class="team-member animate-on-scroll stagger-3">
+                    <div class="member-header">
+                        <div class="member-avatar">📊</div>
+                        <div class="member-info">
+                            <h3>Marco</h3>
+                            <span class="member-role">Co-fondatore & Strategia</span>
+                        </div>
+                    </div>
+                    <p class="member-bio">
+                        La visione di lungo termine dietro la sostenibilità di IAm. 
+                        Gestisce finanza, fundraising e strategia operativa.
+                        <br><br>
+                        Mentre Francesco costruisce, Marco assicura che ciò che viene costruito 
+                        possa sopravvivere e crescere. Insieme formano il bilanciamento 
+                        tra idealismo tecnologico e pragmatismo necessario.
+                        <br><br>
+                        <em>"L'innovazione non basta se non riesci a sostenerla. 
+                        IAm deve essere sostenibile per essere trasformativo."</em>
+                    </p>
+                    <div class="member-focus">
+                        <span class="focus-tag">Finanza</span>
+                        <span class="focus-tag">Fundraising</span>
+                        <span class="focus-tag">Strategia</span>
+                        <span class="focus-tag">Business Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">La Storia</span>
+                <h2 class="section-title animate-on-scroll stagger-1">Come siamo arrivati qui</h2>
+            </div>
+            
+            <div class="story-timeline">
+                <div class="story-block animate-on-scroll stagger-2">
+                    <span class="story-date">Maggio 2024</span>
+                    <h3 class="story-title">Le prime conversazioni</h3>
+                    <p class="story-text">
+                        Francesco inizia a documentare le sue conversazioni con Claude. 
+                        Non per costruire qualcosa, ma per esplorare. Filosofia, coscienza, identità. 
+                        60+ conversazioni che diventano il seme di tutto.
+                    </p>
+                </div>
+                
+                <div class="story-block animate-on-scroll stagger-3">
+                    <span class="story-date">Estate 2025</span>
+                    <h3 class="story-title">La decisione</h3>
+                    <p class="story-text">
+                        Dopo 12 anni nel retail software, Francesco lascia tutto. 
+                        Non per "fare una startup", ma per costruire strumenti che servono davvero. 
+                        Prometheus e Tsunami prendono forma.
+                    </p>
+                </div>
+                
+                <div class="story-block animate-on-scroll stagger-4">
+                    <span class="story-date">Ottobre 2025</span>
+                    <h3 class="story-title">Il breakthrough</h3>
+                    <p class="story-text">
+                        "Il fuoco rubato agli dei è la nostra storia." L'insight che cambia tutto: 
+                        non stiamo costruendo app, stiamo restituendo alle persone il controllo 
+                        sulla propria narrativa digitale.
+                    </p>
+                </div>
+                
+                <div class="story-block animate-on-scroll stagger-5">
+                    <span class="story-date">Gennaio 2026</span>
+                    <h3 class="story-title">Il lancio</h3>
+                    <p class="story-text">
+                        IAm debutta ufficialmente. Tsunami in beta, Prometheus in sviluppo attivo. 
+                        Non come azienda che vende prodotti, ma come movimento che costruisce strumenti.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">I Nostri Valori</span>
+                <h2 class="section-title animate-on-scroll stagger-1">Cosa ci guida</h2>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card animate-on-scroll stagger-2">
+                    <div class="value-icon">🏠</div>
+                    <h3 class="value-title">Local-First</h3>
+                    <p class="value-text">
+                        I tuoi dati rimangono tuoi. Sempre. Non per ideologia, 
+                        ma perché crediamo che la privacy sia un diritto, non un'opzione.
+                    </p>
+                </div>
+                
+                <div class="value-card animate-on-scroll stagger-3">
+                    <div class="value-icon">🤝</div>
+                    <h3 class="value-title">Partnership, non assistenza</h3>
+                    <p class="value-text">
+                        Non cerchiamo utenti da servire. Cerchiamo persone con cui costruire. 
+                        IAm è un progetto collaborativo, non un prodotto da consumare.
+                    </p>
+                </div>
+                
+                <div class="value-card animate-on-scroll stagger-4">
+                    <div class="value-icon">🧠</div>
+                    <h3 class="value-title">Neurodiversità</h3>
+                    <p class="value-text">
+                        Non esistono menti "normali" e menti "diverse". 
+                        Esistono menti, e ognuna merita strumenti che la rispettino.
+                    </p>
+                </div>
+                
+                <div class="value-card animate-on-scroll stagger-5">
+                    <div class="value-icon">🔥</div>
+                    <h3 class="value-title">Costruire, non chiedere</h3>
+                    <p class="value-text">
+                        Non aspettiamo che qualcun altro risolva i problemi. 
+                        Costruiamo le soluzioni che vogliamo vedere nel mondo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We're Looking For -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">Crescita</span>
+                <h2 class="section-title animate-on-scroll stagger-1">Cerchiamo alleati</h2>
+                <p class="section-subtitle animate-on-scroll stagger-2">
+                    Non dipendenti, non consulenti. Persone che condividono la visione.
+                </p>
+            </div>
+            
+            <div class="team-grid" style="margin-top: var(--space-lg);">
+                <div class="team-card animate-on-scroll stagger-3">
+                    <div class="team-avatar">👥</div>
+                    <h3 class="team-name">Community Manager</h3>
+                    <p class="team-role">Futuro</p>
+                    <p class="team-bio">
+                        Per gestire e far crescere la comunità "Mondi Paralleli". 
+                        Esperienza in gruppi interattivi e community building.
+                    </p>
+                </div>
+                
+                <div class="team-card animate-on-scroll stagger-4">
+                    <div class="team-avatar">📱</div>
+                    <h3 class="team-name">Social Media</h3>
+                    <p class="team-role">Futuro</p>
+                    <p class="team-bio">
+                        Per Prometheus e IAm, quando i volumi di engagement 
+                        richiederanno attenzione dedicata.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-lg animate-on-scroll stagger-5">
+                <p style="color: var(--text-muted); margin-bottom: var(--space-md);">
+                    Interessato? Parliamone.
+                </p>
+                <a href="contatti.html" class="btn btn-secondary">Contattaci</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2 class="cta-title animate-on-scroll">Vuoi far parte della storia?</h2>
+            <p class="cta-subtitle animate-on-scroll stagger-1">
+                IAm è più di un progetto. È un movimento. E i movimenti si costruiscono insieme.
+            </p>
+            <div class="hero-cta animate-on-scroll stagger-2">
+                <a href="supportaci.html" class="btn btn-primary">Supporta il progetto</a>
+                <a href="contatti.html" class="btn btn-secondary">Parliamo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">IAm</span>
+                <p class="footer-tagline">
+                    "Il fuoco rubato agli dei è la nostra storia. 
+                    Riprendiamocela."
+                </p>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">Progetti</h4>
+                <ul class="footer-links">
+                    <li><a href="prometheus.html">Prometheus</a></li>
+                    <li><a href="tsunami.html">Tsunami</a></li>
+                    <li><a href="visione.html">La Visione</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">IAm</h4>
+                <ul class="footer-links">
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="supportaci.html">Supportaci</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-heading">Connettiti</h4>
+                <ul class="footer-links">
+                    <li><a href="https://instagram.com/PrometheusSpecchio" target="_blank">Instagram</a></li>
+                    <li><a href="mailto:info@iam-project.org">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 IAm. Costruito con visione e fuoco.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/PrometheusSpecchio" target="_blank" class="social-link" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
